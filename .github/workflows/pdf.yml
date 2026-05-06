@@ -1,0 +1,50 @@
+name: Build PDF
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-latex-recommended
+
+      - name: Build combined PDF
+        run: |
+          pandoc \
+            README.md \
+            docs/01-terminal.md \
+            docs/02-install.md \
+            docs/03-folders.md \
+            docs/04-examples.md \
+            --metadata title="Claude Code – 5-Minute Quickstart" \
+            --pdf-engine=xelatex \
+            --toc \
+            --toc-depth=2 \
+            -V geometry:margin=1in \
+            -V mainfont="DejaVu Serif" \
+            -V monofont="DejaVu Sans Mono" \
+            -o claude-code-quickstart.pdf
+
+      - name: Upload as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: claude-code-quickstart-pdf
+          path: claude-code-quickstart.pdf
+
+      - name: Attach to release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: claude-code-quickstart.pdf
