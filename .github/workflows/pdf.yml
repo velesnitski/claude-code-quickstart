@@ -28,6 +28,7 @@ jobs:
             docs/02-install.md \
             docs/03-folders.md \
             docs/04-examples.md \
+            CHEATSHEET.md \
             --metadata title="Claude Code – 5-Minute Quickstart" \
             --pdf-engine=xelatex \
             --toc \
