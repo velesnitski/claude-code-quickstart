@@ -1,51 +1,82 @@
-# 1. Pick a Terminal
+# 1. Open the Terminal
 
-> **Time:** 2 min · **Goal:** A modern terminal that makes Claude Code feel native.
-
-You can run Claude Code in any terminal, but a modern one gives you better notifications, scrollback, and a smoother feel. Pick one of the recommended apps below.
+> **Time:** 2 min · **Goal:** Have a terminal window open and ready.
 
 ---
 
-## Recommended: Warp (Mac & Windows)
+## What is a "terminal"?
 
-[Warp](https://www.warp.dev/) is a modern terminal with first-class Claude Code integration – it auto-detects the agent and surfaces inline controls, code review, and notifications.
+It's the text-based window where you type commands. It looks like this:
 
-**Install:**
+```
+┌─ Terminal ──────────────────────────┐
+│  Last login: Tue May  6 09:14:22    │
+│  ~ $                                │
+│                                     │
+│                                     │
+└─────────────────────────────────────┘
+```
 
-- **Mac:** `brew install --cask warp` or download from [warp.dev](https://www.warp.dev/)
-- **Windows:** download the installer from [warp.dev](https://www.warp.dev/)
-- **Linux:** see [Warp downloads](https://www.warp.dev/download)
+The blinking cursor after `$` is waiting for you to type. That's it. No mouse, no buttons – just text in, text out.
 
-**After install:** Launch Warp once and accept the defaults. The first time you run `claude` inside Warp, it will offer to install the Claude Code plugin – accept it for richer notifications.
-
----
-
-## Alternatives
-
-If you prefer not to use Warp:
-
-| Platform | Alternative | Why |
-|---|---|---|
-| Mac | iTerm2 / Terminal.app | Built-in / classic, works fine |
-| Windows | [Windows Terminal](https://aka.ms/terminal) | Free, official, modern |
-| Linux | GNOME Terminal / Alacritty / Kitty | Whatever you already use |
-
-Claude Code does **not require** a specific terminal. Pick what you like.
+Claude Code runs **inside** this window. So before installing Claude, you need a terminal.
 
 ---
 
-## Windows: native or WSL?
+## Which terminal should you use?
 
-Both work well. Pick based on what you do day-to-day:
+```mermaid
+flowchart TD
+    Start([What computer do you have?]) --> Mac{Mac?}
+    Start --> Win{Windows?}
+    Mac -->|Yes| WarpMac[Use Warp<br/>or Terminal.app]
+    Win -->|Yes| WarpWin[Use Warp<br/>or Windows Terminal]
+    WarpMac --> Done([Done – you're ready!])
+    WarpWin --> Done
+```
 
-| Pick **native Windows** if… | Pick **[WSL2](https://learn.microsoft.com/en-us/windows/wsl/install)** if… |
-|---|---|
-| You mostly work in PowerShell, .NET, or web tooling on Windows | You work mostly with Linux toolchains (Node, Python, Go, Docker) |
-| You want the simplest install path | You're comfortable with Linux shells |
-| You're new to terminals | Your team's projects assume a Unix environment |
-
-The rest of this guide works identically on both. Where commands differ, we show both.
+We recommend **[Warp](https://www.warp.dev/)** – it's free, modern, and built to work with Claude Code (it shows nice notifications when Claude finishes a task). But any terminal works.
 
 ---
 
-**Next:** [Install Claude Code →](02-install.md)
+## How to install your terminal
+
+### On a Mac
+
+**Option A – Warp (recommended):**
+1. Go to [warp.dev](https://www.warp.dev/) and click **Download for Mac**.
+2. Open the file you downloaded, drag Warp to Applications.
+3. Open Warp from your Applications folder.
+
+**Option B – Terminal (already on your Mac):**
+1. Press <kbd>Cmd</kbd>+<kbd>Space</kbd>, type "Terminal", press Enter.
+
+### On Windows
+
+**Option A – Warp (recommended):**
+1. Go to [warp.dev](https://www.warp.dev/) and click **Download for Windows**.
+2. Run the installer.
+3. Open Warp from the Start menu.
+
+**Option B – Windows Terminal (free, official):**
+1. Open the Microsoft Store, search "Windows Terminal", install.
+2. Open it from the Start menu.
+
+---
+
+## What you should see
+
+Once your terminal is open, you'll see something like:
+
+```
+┌─ Warp / Terminal ───────────────────┐
+│  ~ $                                │
+│   _                                 │
+└─────────────────────────────────────┘
+```
+
+The `$` (or `>` on Windows PowerShell) means it's ready. **You're done with this step.**
+
+---
+
+**Next:** [Install Claude →](02-install.md)

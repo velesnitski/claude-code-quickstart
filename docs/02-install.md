@@ -1,118 +1,109 @@
-# 2. Install Claude Code
+# 2. Install Claude
 
-> **Time:** 2 min · **Goal:** Run `claude` from anywhere on your machine.
-
----
-
-## Prerequisites
-
-- A terminal (see [section 1](01-terminal.md))
-- An [Anthropic account](https://console.anthropic.com/) or a Claude subscription (Pro / Max / Team)
+> **Time:** 2 min · **Goal:** Type `claude` in your terminal and have it work.
 
 ---
 
-## Mac
+## The big picture
 
-The native installer is the recommended path – no Node.js, no `npm`, auto-updates in the background:
+```mermaid
+flowchart LR
+    A[Open your terminal] --> B[Paste 1 install command]
+    B --> C[Restart terminal]
+    C --> D[Type 'claude']
+    D --> E[Sign in via browser]
+    E --> F([Ready to use])
+```
+
+Three things to paste. Two minutes total.
+
+---
+
+## Step 1 – Paste the install command
+
+### On a Mac
+
+Copy this. Paste it into your terminal. Press Enter.
 
 ```bash
 curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-Then restart your terminal. Verify:
+You'll see it download and install. When it's done, it says something like *"Claude Code installed successfully."*
 
-```bash
-claude --version
-```
+### On Windows
 
-> **Alternative (if you prefer npm):** `npm install -g @anthropic-ai/claude-code`. Requires Node.js 18+.
-
----
-
-## Windows
-
-**Which option should I pick?**
-
-- **Option A (native, PowerShell)** – simplest, recommended for most. Works in Windows Terminal, PowerShell, Warp.
-- **Option B (WSL2)** – best if you already use WSL or work mostly with Linux toolchains.
-- **Option C (npm)** – pick this only if you already manage Node.js globally.
-
----
-
-**Option A – Native installer (recommended, in PowerShell):**
+Copy this. Paste it into your PowerShell window. Press Enter.
 
 ```powershell
 irm https://claude.ai/install.ps1 | iex
 ```
 
-> **If PowerShell blocks the script** (`running scripts is disabled on this system`), run this once:
+> If Windows says *"running scripts is disabled"* – paste this once, press Enter, then retry the install:
 > ```powershell
 > Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 > ```
-> Then retry. This is the standard Windows policy for installers.
-
-**Option B – Inside WSL2 / Ubuntu:**
-
-```bash
-curl -fsSL https://claude.ai/install.sh | bash
-```
-
-**Option C – via npm:** `npm install -g @anthropic-ai/claude-code` (requires Node.js 18+)
-
-Restart your terminal. Verify with:
-
-```powershell
-claude --version
-```
-
-> **Note:** the first time you run `claude`, it opens your default browser to sign in. If you're on a remote/RDP machine without a browser, copy the URL from the terminal output and open it on your local machine – the auth token will sync back.
 
 ---
 
-## First run – sign in
+## Step 2 – Restart your terminal
 
-In any folder, type:
+Close the terminal window. Open a new one. (This makes sure your computer "sees" the new `claude` command.)
+
+---
+
+## Step 3 – Run Claude for the first time
+
+In the new terminal, type:
 
 ```bash
 claude
 ```
 
-The first launch opens your browser to sign in. Once authenticated, the token is stored locally – you won't be asked again on this machine.
+**What happens:**
 
-You'll see a prompt like:
+```mermaid
+sequenceDiagram
+    participant You
+    participant Terminal as Terminal
+    participant Browser
+    You->>Terminal: claude
+    Terminal->>Browser: opens claude.ai login page
+    You->>Browser: sign in
+    Browser-->>Terminal: ✓ authenticated
+    Terminal-->>You: ◆ Welcome to Claude Code
+```
+
+A browser window opens. Sign in with your Anthropic / Claude account. The browser sends a token back to the terminal. You only do this once per computer.
+
+After signing in, you'll see:
 
 ```
-> 
+┌─ Terminal ──────────────────────────┐
+│  ~ $ claude                         │
+│                                     │
+│   ◆ Welcome to Claude Code          │
+│   >  _                              │
+│                                     │
+└─────────────────────────────────────┘
 ```
 
-Type a question or instruction in plain English. Press Ctrl+C to exit.
+The `>` is Claude waiting for you to type a question. **You're installed and ready.**
+
+Press <kbd>Ctrl</kbd>+<kbd>C</kbd> to exit any time.
 
 ---
 
-## Updating
+## If something goes wrong
 
-Native install updates itself in the background. To force-update:
-
-```bash
-claude doctor   # check status
-claude update   # if available
-```
-
-For npm: `npm update -g @anthropic-ai/claude-code`.
-
----
-
-## Troubleshooting
-
-| Symptom | Fix |
+| What you see | What to do |
 |---|---|
-| `command not found: claude` (Mac/Linux) | Restart your terminal. Check `which claude`. |
-| `claude is not recognized` (Windows) | Restart your terminal. Check `where claude`. If empty, the PATH wasn't updated – sign out / sign in. |
-| `running scripts is disabled` (Windows) | `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, then retry. |
-| Login loop | Try `claude logout`, then `claude` again. |
-| Corporate proxy / firewall blocks login | Use `claude --help` to see proxy env vars, or contact your IT admin. |
-| Antivirus flags the installer (Windows) | Allow the file in your AV's quarantine. The installer is signed by Anthropic. |
+| `command not found: claude` (Mac) | Close & reopen the terminal. |
+| `claude is not recognized` (Windows) | Close & reopen PowerShell. Sign out / sign in to Windows. |
+| `running scripts is disabled` (Windows) | Run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once. |
+| The login keeps looping | Type `claude logout` then `claude` again. |
+| Antivirus blocks the installer (Windows) | Allow it – the installer is signed by Anthropic. |
 
 ---
 
-**Next:** [Organize your project →](03-folders.md)
+**Next:** [Set up a project →](03-folders.md)
