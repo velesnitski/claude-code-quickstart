@@ -31,11 +31,25 @@ claude --version
 
 ## Windows
 
+**Which option should I pick?**
+
+- **Option A (native, PowerShell)** – simplest, recommended for most. Works in Windows Terminal, PowerShell, Warp.
+- **Option B (WSL2)** – best if you already use WSL or work mostly with Linux toolchains.
+- **Option C (npm)** – pick this only if you already manage Node.js globally.
+
+---
+
 **Option A – Native installer (recommended, in PowerShell):**
 
 ```powershell
 irm https://claude.ai/install.ps1 | iex
 ```
+
+> **If PowerShell blocks the script** (`running scripts is disabled on this system`), run this once:
+> ```powershell
+> Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+> ```
+> Then retry. This is the standard Windows policy for installers.
 
 **Option B – Inside WSL2 / Ubuntu:**
 
@@ -43,9 +57,15 @@ irm https://claude.ai/install.ps1 | iex
 curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-**Option C – via npm:** `npm install -g @anthropic-ai/claude-code`
+**Option C – via npm:** `npm install -g @anthropic-ai/claude-code` (requires Node.js 18+)
 
-Restart your terminal, then `claude --version`.
+Restart your terminal. Verify with:
+
+```powershell
+claude --version
+```
+
+> **Note:** the first time you run `claude`, it opens your default browser to sign in. If you're on a remote/RDP machine without a browser, copy the URL from the terminal output and open it on your local machine – the auth token will sync back.
 
 ---
 
@@ -86,9 +106,12 @@ For npm: `npm update -g @anthropic-ai/claude-code`.
 
 | Symptom | Fix |
 |---|---|
-| `command not found: claude` | Restart your terminal. Check `which claude`. |
+| `command not found: claude` (Mac/Linux) | Restart your terminal. Check `which claude`. |
+| `claude is not recognized` (Windows) | Restart your terminal. Check `where claude`. If empty, the PATH wasn't updated – sign out / sign in. |
+| `running scripts is disabled` (Windows) | `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, then retry. |
 | Login loop | Try `claude logout`, then `claude` again. |
 | Corporate proxy / firewall blocks login | Use `claude --help` to see proxy env vars, or contact your IT admin. |
+| Antivirus flags the installer (Windows) | Allow the file in your AV's quarantine. The installer is signed by Anthropic. |
 
 ---
 

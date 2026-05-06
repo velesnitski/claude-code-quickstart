@@ -34,9 +34,17 @@ Claude Code does **not require** a specific terminal. Pick what you like.
 
 ---
 
-## What about WSL on Windows?
+## Windows: native or WSL?
 
-If you're on Windows and want the smoothest experience, **install [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install)** with Ubuntu and run Claude Code from there. Most CLI tools are designed for Unix; WSL eliminates the friction.
+Both work well. Pick based on what you do day-to-day:
+
+| Pick **native Windows** if… | Pick **[WSL2](https://learn.microsoft.com/en-us/windows/wsl/install)** if… |
+|---|---|
+| You mostly work in PowerShell, .NET, or web tooling on Windows | You work mostly with Linux toolchains (Node, Python, Go, Docker) |
+| You want the simplest install path | You're comfortable with Linux shells |
+| You're new to terminals | Your team's projects assume a Unix environment |
+
+The rest of this guide works identically on both. Where commands differ, we show both.
 
 ---
 

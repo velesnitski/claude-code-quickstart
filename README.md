@@ -5,6 +5,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PDF](https://img.shields.io/badge/PDF-download-blue.svg)](../../releases/latest)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![macOS](https://img.shields.io/badge/macOS-supported-success)](docs/02-install.md#mac)
+[![Windows](https://img.shields.io/badge/Windows-supported-success)](docs/02-install.md#windows)
+[![Linux](https://img.shields.io/badge/Linux-supported-success)](docs/02-install.md#mac)
 
 A short, practical guide to **[Claude Code](https://docs.claude.com/en/docs/claude-code)** – Anthropic's terminal-based AI coding assistant. Four sections, ~12 minutes total, copy-pasteable examples, downloadable PDF.
 
@@ -35,6 +38,17 @@ The space already has [excellent](https://github.com/FlorianBruniaux/claude-code
 | 4 | **[Try real examples](docs/04-examples.md)** – Analyze, refactor, debug | 5 min |
 
 Bonus: **[One-page cheatsheet](CHEATSHEET.md)** · **[PDF download](../../releases/latest)**
+
+---
+
+## Install in one line
+
+| OS | Command |
+|---|---|
+| **macOS / Linux** | `curl -fsSL https://claude.ai/install.sh \| bash` |
+| **Windows** (PowerShell) | `irm https://claude.ai/install.ps1 \| iex` |
+
+Full install notes (including WSL2, npm, troubleshooting): **[docs/02-install.md](docs/02-install.md)**
 
 ---
 
