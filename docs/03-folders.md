@@ -62,31 +62,119 @@ Claude looks at the folder and writes a draft `CLAUDE.md` for you. You can edit 
 
 ## A good `CLAUDE.md` template
 
-Copy this, save it as `CLAUDE.md` at the root of your project, fill in the blanks:
+Think of it as a **brief you'd give a freelancer on day one** – who you are, who you write for, what to say, what *never* to say. Specific beats generic. Below is a marketing-flavored template; if you're working on code, see [the code variant](#working-on-code-instead) at the end.
+
+### Marketing edition – copy & fill in
+
+```markdown
+# Project: <brand or campaign name>
+
+## Who we are
+One paragraph. What we do, who it's for, why it matters.
+
+## Audience
+- Primary: <persona, role, pain points>
+- Secondary: <persona>
+- Reading level: <e.g. "8th grade — keep it simple">
+
+## Brand voice
+Three adjectives + a do / don't list.
+- Voice: clear, warm, slightly cheeky.
+- We say: "you", "let's", short sentences, concrete verbs.
+- We don't say: leverage, synergy, ecosystem, game-changer, world-class.
+
+## Style rules
+- Headlines: 6–10 words, sentence case (not Title Case).
+- CTAs verb-first: "Start free", "See pricing".
+- Oxford comma: yes. Em-dash: yes. Semicolons: avoid.
+- Emojis: in social posts only, never in blog headers.
+
+## What's in this folder
+- /blog          drafts in markdown
+- /social        LinkedIn / Twitter / Threads drafts
+- /campaigns     email sequences
+- /analytics     CSVs from GA4 / HubSpot
+- /assets        logos & images — read-only, never edit
+
+## Banned (legal + brand)
+- No name-by-name comparisons to <competitor>.
+- No revenue / ROI claims unless sourced in /sources.
+- Never use "guarantee" — legal risk.
+- Pricing details only in /pricing — sales owns those.
+
+## Approval workflow
+- Drafts → /drafts. PMM reviews before publish.
+- Anything mentioning legal, pricing, or customer names → manager sign-off.
+```
+
+Keep it short – under 150 lines. Long files dilute attention.
+
+### What "good" looks like (filled-in example)
+
+Here's the same template filled in for a fictional brand. Notice how specific everything gets:
+
+```markdown
+# Project: Brightpath – content marketing
+
+## Who we are
+A focus-and-productivity app for knowledge workers. ~80% of users
+are solo creators or small-team operators who value calm tools
+over feature bloat.
+
+## Audience
+- Primary: creators / operators 28–45, multitaskers, skim-readers.
+- Reading level: 8th grade. Hemingway score 5 or below.
+
+## Brand voice
+Calm, candid, slightly playful.
+- Say: "you", "let's", short sentences, concrete verbs.
+- Don't say: leverage, synergy, game-changer, ecosystem, world-class.
+
+## Style rules
+- Headlines: 6–10 words, sentence case.
+- CTAs verb-first: "Start free trial", "See pricing".
+- Oxford comma: yes. Em-dash: yes. Semicolons: avoid.
+- Emojis: in social only, never in blog headers.
+
+## What's in this folder
+- /blog          drafts (publish via Webflow)
+- /social        LinkedIn-first, Twitter cross-post
+- /newsletter    weekly Friday digest
+- /analytics     GA4 + email exports
+- /assets        logos — read-only
+
+## Banned
+- No name-by-name comparison to other productivity apps.
+- No "10x your output" / "guaranteed" / "world-class".
+- Pricing claims only with a /sources citation.
+- Never quote a customer without written approval.
+```
+
+With a `CLAUDE.md` like that, a single prompt – *"draft a LinkedIn post about our new focus-mode feature"* – produces copy that already sounds like you, in your voice, avoiding your banned phrases.
+
+### Working on code instead?
+
+If your project is a codebase rather than content, the same idea applies with different fields:
 
 ```markdown
 # Project: <name>
 
 ## What it is
-One paragraph describing what this project does.
+What this codebase does, in one paragraph.
 
-## Tech / tools
-- Language, framework, key libraries
-- Database, services we depend on
+## Tech stack
+Language, framework, key libraries, database.
 
 ## How to run
-- `npm run dev` (or whatever)
+- `npm run dev`
 - `npm test`
 
 ## Conventions
-- How we write code (style, naming, formatting)
-- How we write commit messages
+Code style, naming, commit message style.
 
 ## Gotchas
-- Things a new contributor would hit – auth quirks, env vars, flaky tests
+Auth quirks, env vars, flaky tests.
 ```
-
-Keep it short – under 150 lines. Long files dilute attention.
 
 ---
 
