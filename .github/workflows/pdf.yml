@@ -36,6 +36,7 @@ jobs:
             docs/03-folders.md
             docs/04-examples.md
             CHEATSHEET.md
+            --data-dir /root/.pandoc
             --template eisvogel
             --metadata-file pdf/meta.yml
             --pdf-engine=xelatex
