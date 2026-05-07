@@ -19,11 +19,15 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install pandoc, LaTeX, fonts and SVG support (cached)
-        uses: awalsh128/cache-apt-pkgs-action@v1.5.1
-        with:
-          packages: pandoc texlive-xetex texlive-fonts-extra texlive-latex-extra librsvg2-bin
-          version: pdfbuild-1
+      - name: Install pandoc, LaTeX, fonts and SVG support
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            pandoc \
+            texlive-xetex \
+            texlive-fonts-extra \
+            texlive-latex-extra \
+            librsvg2-bin
 
       - name: Install mermaid-filter (best-effort)
         run: npm install -g mermaid-filter || echo "mermaid-filter install failed; will fall back to code blocks"
