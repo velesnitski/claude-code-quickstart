@@ -42,21 +42,25 @@ We recommend **[Warp](https://www.warp.dev/)** – it's free, modern, and built 
 ### On a Mac
 
 **Option A – Warp (recommended):**
+
 1. Go to [warp.dev](https://www.warp.dev/) and click **Download for Mac**.
 2. Open the file you downloaded, drag Warp to Applications.
 3. Open Warp from your Applications folder.
 
 **Option B – Terminal (already on your Mac):**
+
 1. Press `Cmd+Space`, type "Terminal", press Enter.
 
 ### On Windows
 
 **Option A – Warp (recommended):**
+
 1. Go to [warp.dev](https://www.warp.dev/) and click **Download for Windows**.
 2. Run the installer.
 3. Open Warp from the Start menu.
 
 **Option B – Windows Terminal (free, official):**
+
 1. Open the Microsoft Store, search "Windows Terminal", install.
 2. Open it from the Start menu.
 

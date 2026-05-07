@@ -84,7 +84,7 @@ Three adjectives + a do / don't list.
 - We don't say: leverage, synergy, ecosystem, game-changer, world-class.
 
 ## Style rules
-- Headlines: 6–10 words, sentence case (not Title Case).
+- Headlines: 6 to 10 words, sentence case (not Title Case).
 - CTAs verb-first: "Start free", "See pricing".
 - Oxford comma: yes. Em-dash: yes. Semicolons: avoid.
 - Emojis: in social posts only, never in blog headers.
@@ -122,7 +122,7 @@ are solo creators or small-team operators who value calm tools
 over feature bloat.
 
 ## Audience
-- Primary: creators / operators 28–45, multitaskers, skim-readers.
+- Primary: creators / operators aged 28 to 45, multitaskers, skim-readers.
 - Reading level: 8th grade. Hemingway score 5 or below.
 
 ## Brand voice
@@ -131,7 +131,7 @@ Calm, candid, slightly playful.
 - Don't say: leverage, synergy, game-changer, ecosystem, world-class.
 
 ## Style rules
-- Headlines: 6–10 words, sentence case.
+- Headlines: 6 to 10 words, sentence case.
 - CTAs verb-first: "Start free trial", "See pricing".
 - Oxford comma: yes. Em-dash: yes. Semicolons: avoid.
 - Emojis: in social only, never in blog headers.

@@ -82,7 +82,7 @@ If you've never opened a terminal before – **start at [Step 1](docs/01-termina
 
 ## Liked it?
 
-If this guide saved you 5 minutes, **[give the repo a ★](https://github.com/velesnitski/claude-code-quickstart/stargazers)** – it's the best way to help others find it.
+If this guide saved you 5 minutes, **[give the repo a star](https://github.com/velesnitski/claude-code-quickstart/stargazers)** – it's the best way to help others find it.
 
 ## Contributing
 
