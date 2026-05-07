@@ -8,6 +8,8 @@
 [![macOS](https://img.shields.io/badge/macOS-supported-success)](docs/02-install.md)
 [![Windows](https://img.shields.io/badge/Windows-supported-success)](docs/02-install.md)
 
+🌐 **Languages:** **English** · [Русский](README.ru.md)
+
 ---
 
 ## What is Claude Code?
@@ -15,6 +17,8 @@
 A smart assistant that lives in your **terminal** (the black-and-white text window where developers type commands). You ask it things in plain English – it reads your files, edits them, runs commands, explains errors.
 
 Think of it as **ChatGPT that can actually touch your computer**.
+
+![Claude Code terminal session](docs/images/hero-terminal.png)
 
 ```mermaid
 flowchart LR
@@ -24,27 +28,9 @@ flowchart LR
     Claude -- "answers" --> You
 ```
 
-Here's what it actually looks like on screen:
-
-> **Terminal**
-
-```text
-~/my-folder $ claude
-
-  ◆ Welcome to Claude Code
-  > what's in this folder?
-
-Reading report.csv... done.
-It's a Q1 sales report. Top product: Widget X.
-Three findings:
-  1. Revenue up 12% over Q4.
-  2. Row 47 has a missing date — worth checking.
-  3. APAC outperformed all regions (+22%).
-
-  > _
-```
-
 That's the whole experience. You type. It works. You read.
+
+> 🎬 **60-second demo video** – coming soon. Want to record one? Open a PR linking it here.
 
 ---
 
@@ -94,10 +80,14 @@ If you've never opened a terminal before – **start at [Step 1](docs/01-termina
 
 ---
 
+## Liked it?
+
+If this guide saved you 5 minutes, **[give the repo a ⭐](../../stargazers)** – it's the best way to help others find it.
+
 ## Contributing
 
-- **Translations** – open a PR with `README.<lang>.md` (e.g. `README.ru.md`).
-- **Screenshots** – real photos of the terminal beat ASCII art. Drop them in `docs/images/`.
+- **Translations** – open a PR with `README.<lang>.md` (Russian already done at [README.ru.md](README.ru.md)).
+- **Screenshots & GIFs** – real captures beat ASCII art. Drop them in `docs/images/`.
 - **Corrections** – fix a section directly, send a PR.
 - See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 

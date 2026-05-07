@@ -30,6 +30,11 @@ You don't need to translate everything – partial translations are fine. Mark u
 
 Place images in `docs/images/`. Naming: `<section>-<what>.png` (e.g. `02-install-mac-success.png`). Compress with [tinypng.com](https://tinypng.com) before committing.
 
+The repo ships with two SVG sources you can update or replace:
+
+- `docs/images/hero-terminal.svg` – the terminal mockup at the top of the README. Edit the SVG (any vector tool), then regenerate the PNG with `qlmanage -t -s 1760 -o docs/images/ docs/images/hero-terminal.svg` and `sips -c 1080 1760 docs/images/hero-terminal.png`.
+- `docs/images/og-banner.svg` – the social-preview banner (1280×640). Same regen flow. After committing, upload `og-banner.png` via **Settings → General → Social preview** in the GitHub repo to make link unfurls show the branded card.
+
 ## Building the PDF locally
 
 ```bash
