@@ -17,9 +17,10 @@ ENV DEBIAN_FRONTEND=noninteractive \
     LC_ALL=C.UTF-8
 
 RUN apt-get update \
- && apt-get install -y --no-install-recommends \
+ && apt-get install -y \
       ca-certificates \
       curl \
+      git \
       tar \
       gzip \
       pandoc \
@@ -28,6 +29,7 @@ RUN apt-get update \
       texlive-fonts-extra \
       texlive-latex-recommended \
       texlive-latex-extra \
+      lmodern \
       librsvg2-bin \
       nodejs \
       npm \
