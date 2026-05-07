@@ -2,13 +2,13 @@
 
 > Самый короткий путь от «что такое Claude Code?» до «я уже им пользуюсь».
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![PDF](https://img.shields.io/badge/PDF-скачать-blue.svg)](../../releases/latest)
-[![PRs Welcome](https://img.shields.io/badge/PRs-приветствуются-brightgreen.svg)](CONTRIBUTING.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/velesnitski/claude-code-quickstart/blob/main/LICENSE)
+[![PDF](https://img.shields.io/badge/PDF-скачать-blue.svg)](https://github.com/velesnitski/claude-code-quickstart/releases/latest)
+[![PRs Welcome](https://img.shields.io/badge/PRs-приветствуются-brightgreen.svg)](https://github.com/velesnitski/claude-code-quickstart/blob/main/CONTRIBUTING.md)
 [![macOS](https://img.shields.io/badge/macOS-поддерживается-success)](docs/02-install.md)
 [![Windows](https://img.shields.io/badge/Windows-поддерживается-success)](docs/02-install.md)
 
-**Языки:** [English](README.md) · **Русский**
+**Языки:** [English](https://github.com/velesnitski/claude-code-quickstart) · **Русский**
 
 ---
 
@@ -46,7 +46,7 @@
 | 3 | **[Подготовить проект](docs/03-folders.md)** | какие файлы Claude видит и как ему помочь | 3 мин |
 | 4 | **[Реальные примеры](docs/04-examples.md)** | пять задач, которые можно выполнить уже сегодня | 5 мин |
 
-Бонус: **[шпаргалка на одну страницу](CHEATSHEET.md)** · **[PDF-версия](../../releases/latest)**
+Бонус: **[шпаргалка на одну страницу](CHEATSHEET.md)** · **[PDF-версия](https://github.com/velesnitski/claude-code-quickstart/releases/latest)**
 
 ---
 
@@ -80,8 +80,8 @@
 - **Переводы** – откройте PR с файлом `README.<lang>.md`
 - **Скриншоты** – реальные снимки терминала ценнее ASCII-арта; кладите в `docs/images/`
 - **Правки** – отредактируйте раздел напрямую и пришлите PR
-- Подробности в [CONTRIBUTING.md](CONTRIBUTING.md)
+- Подробности в [CONTRIBUTING.md](https://github.com/velesnitski/claude-code-quickstart/blob/main/CONTRIBUTING.md)
 
 ## Лицензия
 
-[MIT](LICENSE) – используйте свободно, в том числе в коммерческих обучающих материалах.
+[MIT](https://github.com/velesnitski/claude-code-quickstart/blob/main/LICENSE) – используйте свободно, в том числе в коммерческих обучающих материалах.

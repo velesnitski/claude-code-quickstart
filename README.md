@@ -2,13 +2,13 @@
 
 > The shortest path from "what is Claude Code?" to "I'm using it."
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![PDF](https://img.shields.io/badge/PDF-download-blue.svg)](../../releases/latest)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/velesnitski/claude-code-quickstart/blob/main/LICENSE)
+[![PDF](https://img.shields.io/badge/PDF-download-blue.svg)](https://github.com/velesnitski/claude-code-quickstart/releases/latest)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/velesnitski/claude-code-quickstart/blob/main/CONTRIBUTING.md)
 [![macOS](https://img.shields.io/badge/macOS-supported-success)](docs/02-install.md)
 [![Windows](https://img.shields.io/badge/Windows-supported-success)](docs/02-install.md)
 
-**Languages:** **English** · [Русский](README.ru.md)
+**Languages:** **English** · [Русский](https://github.com/velesnitski/claude-code-quickstart/blob/main/README.ru.md)
 
 ---
 
@@ -58,7 +58,7 @@ Don't have a terminal yet? Start at **[Step 1](docs/01-terminal.md)** below.
 | 3 | **[Set up a project](docs/03-folders.md)** | What folders Claude looks at, and how to help it | 3 min |
 | 4 | **[Try real examples](docs/04-examples.md)** | Five things to do today | 5 min |
 
-Bonus: **[One-page cheatsheet](CHEATSHEET.md)** · **[PDF download](../../releases/latest)**
+Bonus: **[One-page cheatsheet](CHEATSHEET.md)** · **[PDF download](https://github.com/velesnitski/claude-code-quickstart/releases/latest)**
 
 ---
 
@@ -82,15 +82,15 @@ If you've never opened a terminal before – **start at [Step 1](docs/01-termina
 
 ## Liked it?
 
-If this guide saved you 5 minutes, **[give the repo a ★](../../stargazers)** – it's the best way to help others find it.
+If this guide saved you 5 minutes, **[give the repo a ★](https://github.com/velesnitski/claude-code-quickstart/stargazers)** – it's the best way to help others find it.
 
 ## Contributing
 
-- **Translations** – open a PR with `README.<lang>.md` (Russian already done at [README.ru.md](README.ru.md)).
+- **Translations** – open a PR with `README.<lang>.md` (Russian already done at [README.ru.md](https://github.com/velesnitski/claude-code-quickstart/blob/main/README.ru.md)).
 - **Screenshots & GIFs** – real captures beat ASCII art. Drop them in `docs/images/`.
 - **Corrections** – fix a section directly, send a PR.
-- See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+- See [CONTRIBUTING.md](https://github.com/velesnitski/claude-code-quickstart/blob/main/CONTRIBUTING.md) for details.
 
 ## License
 
-[MIT](LICENSE) – use freely, including in commercial training material.
+[MIT](https://github.com/velesnitski/claude-code-quickstart/blob/main/LICENSE) – use freely, including in commercial training material.
