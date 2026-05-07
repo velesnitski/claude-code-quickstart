@@ -8,64 +8,25 @@ on:
 
 permissions:
   contents: write
+  packages: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/velesnitski/pdf-builder:latest
+      options: --user root
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install pandoc, LaTeX, fonts and SVG support
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y \
-            pandoc \
-            texlive-xetex \
-            texlive-fonts-recommended \
-            texlive-fonts-extra \
-            texlive-latex-recommended \
-            texlive-latex-extra \
-            librsvg2-bin
-
-      - name: Install mermaid-filter (best-effort)
-        run: npm install -g mermaid-filter || echo "mermaid-filter install failed; will fall back to code blocks"
-
-      - name: Download Eisvogel template
-        run: |
-          mkdir -p ~/.pandoc/templates /tmp/eisvogel
-          curl -fsSL -o /tmp/eisvogel/Eisvogel.tar.gz \
-            https://github.com/Wandmalfarbe/pandoc-latex-template/releases/latest/download/Eisvogel.tar.gz
-          tar -xzf /tmp/eisvogel/Eisvogel.tar.gz -C /tmp/eisvogel
-          # Locate the dir that contains eisvogel.latex and copy its full
-          # tree (partials/, etc.) into pandoc's templates dir.
-          EISVOGEL_DIR=$(dirname "$(find /tmp/eisvogel -name 'eisvogel.latex' -print -quit)")
-          echo "Eisvogel content found in: $EISVOGEL_DIR"
-          cp -r "$EISVOGEL_DIR"/. ~/.pandoc/templates/
-          echo "--- ~/.pandoc/templates/ ---"
-          ls -la ~/.pandoc/templates/
-          test -f ~/.pandoc/templates/eisvogel.latex
-          test -d ~/.pandoc/templates/partials || echo "no partials dir – may be inlined"
-
       - name: Build combined PDF
         env:
-          # PNG, not SVG – SVG text labels disappear in xelatex via rsvg-convert
-          # because the embedded text uses web fonts not available to LaTeX.
-          # PNG rasterises the text into the image so labels always render.
           MERMAID_FILTER_FORMAT: png
           MERMAID_FILTER_THEME: default
           MERMAID_FILTER_BACKGROUND: white
           MERMAID_FILTER_WIDTH: "1100"
           MERMAID_FILTER_SCALE: "1.5"
-          MERMAID_FILTER_PUPPETEER_CONFIG: /tmp/puppeteer-config.json
         run: |
-          # Puppeteer needs --no-sandbox in GitHub Actions runners
-          cat > /tmp/puppeteer-config.json <<'EOF'
-          {"args":["--no-sandbox","--disable-setuid-sandbox"]}
-          EOF
           set +e
           PANDOC_ARGS=(
             README.md
@@ -91,14 +52,13 @@ jobs:
             -o claude-code-quickstart.pdf
           )
 
-          # First attempt: with mermaid-filter (renders diagrams as images)
-          if command -v mermaid-filter >/dev/null && \
-             pandoc "${PANDOC_ARGS[@]}" --filter mermaid-filter; then
+          # Try with mermaid-filter (renders diagrams as PNGs)
+          if pandoc "${PANDOC_ARGS[@]}" --filter mermaid-filter; then
             echo "Built PDF with rendered mermaid diagrams"
             exit 0
           fi
 
-          echo "Falling back: build PDF without mermaid-filter (diagrams will appear as code blocks)"
+          echo "Falling back: build PDF without mermaid-filter"
           pandoc "${PANDOC_ARGS[@]}"
 
       - name: Upload as artifact
