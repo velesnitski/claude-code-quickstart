@@ -15,28 +15,83 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install pandoc and LaTeX
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pandoc, LaTeX, fonts and SVG support
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-latex-recommended librsvg2-bin
+          sudo apt-get install -y \
+            pandoc \
+            texlive-xetex \
+            texlive-fonts-extra \
+            texlive-latex-extra \
+            librsvg2-bin
+
+      - name: Install mermaid-filter (best-effort)
+        run: npm install -g mermaid-filter || echo "mermaid-filter install failed; will fall back to code blocks"
+
+      - name: Download Eisvogel template
+        run: |
+          mkdir -p ~/.pandoc/templates
+          cd /tmp
+          curl -fsSL -o eisvogel.tar.gz \
+            https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v3.2.0/Eisvogel-3.2.0.tar.gz
+          tar -xzf eisvogel.tar.gz
+          find . -name 'eisvogel.latex' -exec cp {} ~/.pandoc/templates/ \;
+          ls -la ~/.pandoc/templates/
 
       - name: Build combined PDF
+        env:
+          MERMAID_FILTER_FORMAT: svg
+          MERMAID_FILTER_THEME: default
+          MERMAID_FILTER_BACKGROUND: transparent
         run: |
-          pandoc \
-            README.md \
-            docs/01-terminal.md \
-            docs/02-install.md \
-            docs/03-folders.md \
-            docs/04-examples.md \
-            CHEATSHEET.md \
-            --metadata title="Claude Code – 5-Minute Quickstart" \
-            --pdf-engine=xelatex \
-            --toc \
-            --toc-depth=2 \
-            -V geometry:margin=1in \
-            -V mainfont="DejaVu Serif" \
-            -V monofont="DejaVu Sans Mono" \
+          set +e
+          PANDOC_ARGS=(
+            README.md
+            docs/01-terminal.md
+            docs/02-install.md
+            docs/03-folders.md
+            docs/04-examples.md
+            CHEATSHEET.md
+            --template eisvogel
+            --pdf-engine=xelatex
+            --listings
+            --toc
+            --toc-depth=2
+            --metadata "title=Claude Code – 5-Minute Quickstart"
+            --metadata "subtitle=The on-ramp for marketing, content & dev teams"
+            --metadata titlepage=true
+            --metadata titlepage-color=1F2937
+            --metadata titlepage-text-color=FFFFFF
+            --metadata titlepage-rule-color=F59E0B
+            --metadata titlepage-rule-height=4
+            --metadata book=true
+            --metadata classoption=oneside
+            --metadata "footer-left=claude-code-quickstart"
+            --metadata "footer-right=github.com/velesnitski/claude-code-quickstart"
+            -V geometry:margin=1in
+            -V colorlinks=true
+            -V linkcolor=NavyBlue
+            -V urlcolor=NavyBlue
+            -V toccolor=DarkGray
+            -V mainfont=DejaVu\ Serif
+            -V monofont=DejaVu\ Sans\ Mono
+            -V sansfont=DejaVu\ Sans
             -o claude-code-quickstart.pdf
+          )
+
+          # First attempt: with mermaid-filter (renders diagrams as images)
+          if command -v mermaid-filter >/dev/null && \
+             pandoc "${PANDOC_ARGS[@]}" --filter mermaid-filter; then
+            echo "Built PDF with rendered mermaid diagrams"
+            exit 0
+          fi
+
+          echo "Falling back: build PDF without mermaid-filter (diagrams will appear as code blocks)"
+          pandoc "${PANDOC_ARGS[@]}"
 
       - name: Upload as artifact
         uses: actions/upload-artifact@v4

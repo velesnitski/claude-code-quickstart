@@ -33,7 +33,7 @@ Verify: `claude --version` · Update: `claude update` · Diagnose: `claude docto
 | Command | What it does |
 |---|---|
 | `claude` | Start a session in the current folder |
-| `claude "fix the failing test"` | One-shot prompt, then exit |
+| `claude "summarize feedback.csv"` | One-shot prompt, then exit |
 | `claude -c` | Continue the most recent session |
 | `claude --resume` | Pick a past session to resume |
 | <kbd>Ctrl</kbd>+<kbd>C</kbd> | Cancel / exit |
@@ -98,11 +98,13 @@ Keep under 150 lines. Place at repo root. Commit it.
 
 ## Five killer patterns
 
-1. **Drop & analyze** – put a file in a folder, ask "summarize this in three bullets."
-2. **Plan before code** – `/plan` for any change touching more than one file.
-3. **Test generation** – "write tests for `src/utils/parseDate.ts` covering edge cases."
-4. **Stack-trace triage** – paste an error, ask for a plain-English diagnosis + fix.
-5. **Pre-push review** – `/review` before every `git push`.
+1. **Drop & summarize** – customer-feedback CSV, GA4 export, interview transcript → themes in 30 seconds.
+2. **Repurpose** – one long form (blog, deck, podcast transcript) → many short forms in your voice.
+3. **Brand-voice drafting** – headlines, social posts, email subjects that already sound like you.
+4. **Edit & tone-check** – flag banned phrases from `CLAUDE.md`, suggest tighter alternatives.
+5. **Localize without losing brand** – translate campaigns; voice and glossary preserved.
+
+> **Working on code?** The same five patterns apply: analyze logs, generate tests, refactor with `/plan`, fix stack traces, `/review` before pushing.
 
 ---
 

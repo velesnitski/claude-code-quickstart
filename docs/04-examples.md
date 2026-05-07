@@ -1,169 +1,163 @@
 # 4. Real Examples
 
-> **Time:** 5 min · **Goal:** See Claude do something useful in your own terminal.
+> **Time:** 5 min · **Goal:** See Claude do something useful for your actual work.
 
-Each example is copy-pasteable. Each shows a flow diagram and what your screen will look like.
+Each example below shows the flow and what your screen will look like. Pick one and try it today.
+
+> **Marketing or content work:** start here. **Working on code?** The same patterns apply – see [the official docs](https://docs.claude.com/en/docs/claude-code) for code-flavored examples.
 
 ---
 
-## Example 1 – Drop a file, get a summary
+## Example 1 – Find themes in customer feedback
 
-**Use case:** You have a CSV / PDF / log / contract and want a quick read.
+**Use case:** 200+ NPS comments, survey replies, or support tickets. You need three clean themes for tomorrow's leadership update.
 
 ```mermaid
 sequenceDiagram
     participant You
     participant Folder
     participant Claude
-    You->>Folder: drop report.csv
+    You->>Folder: drop feedback.csv
     You->>Claude: claude
-    You->>Claude: "summarize this folder"
-    Claude->>Folder: read report.csv
-    Folder-->>Claude: contents
-    Claude-->>You: 1-paragraph summary + 3 findings
+    You->>Claude: "find top 3 themes with sample quotes"
+    Claude->>Folder: read feedback.csv
+    Folder-->>Claude: 412 rows
+    Claude-->>You: ranked themes + verbatim quotes
 ```
 
 **On your screen:**
 
 ```
 ┌─ Terminal ──────────────────────────────────────────┐
-│  ~/analyze $ claude                                 │
+│  ~/feedback $ claude                                │
 │                                                     │
-│   ◆ Welcome to Claude Code                          │
-│   > Read the file in this folder. Give me:         │
-│     1. a one-paragraph summary,                     │
-│     2. three bullet points of key findings,         │
-│     3. anomalies worth investigating.               │
+│   > Read feedback.csv. Find the top 3 themes.       │
+│     For each: 2 verbatim quotes + suggested fix.    │
 │                                                     │
-│   Reading report.csv (1,420 rows)... done.          │
-│   Summary: Q1 sales data for the EMEA region…      │
-│   • Top product is Widget X (38% of revenue).       │
-│   • Revenue grew 12% vs Q4.                         │
-│   • Row 47 has a missing 'date' field.              │
+│   Reading 412 rows... done.                         │
+│                                                     │
+│   1. Onboarding friction (87 mentions)              │
+│      "Took 4 days to figure out the import flow."   │
+│      "Wish there was a setup wizard."               │
+│      → suggest: build a guided first-run.           │
+│                                                     │
+│   2. Pricing confusion (54)                         │
+│   3. Missing export (38)                            │
 │   > _                                               │
 └─────────────────────────────────────────────────────┘
 ```
 
-Follow up with anything: *"show me row 47"* or *"plot column B as a histogram"*.
-
 ---
 
-## Example 2 – Generate tests for a function
+## Example 2 – Turn one blog post into ten social posts
 
-**Use case:** You have code and want test coverage without writing it yourself.
-
-```mermaid
-sequenceDiagram
-    participant You
-    participant Claude
-    participant File as src/parseDate.ts
-    You->>Claude: "write Jest tests for parseDate.ts"
-    Claude->>File: read source
-    Claude-->>You: proposed tests + diff
-    You->>Claude: "yes, save it"
-    Claude->>File: writes parseDate.test.ts
-```
-
-**On your screen:**
-
-```
-┌─ Terminal ──────────────────────────────────────────┐
-│   > Look at src/utils/parseDate.ts. Write Jest      │
-│     tests covering valid ISO strings, invalid       │
-│     input, and timezone edge cases. Save next to    │
-│     the source file.                                │
-│                                                     │
-│   I'll create src/utils/parseDate.test.ts with 9    │
-│   tests. Here's the diff:                           │
-│   + describe('parseDate', () => {                   │
-│   +   it('handles valid ISO strings', () => {...}); │
-│   +   ...                                           │
-│   Apply this change? [y/N] _                        │
-└─────────────────────────────────────────────────────┘
-```
-
-Press `y`, the file is created. Run `npm test` to verify.
-
----
-
-## Example 3 – Explain a stack trace
-
-**Use case:** A confusing error, fast diagnosis.
+**Use case:** You wrote a 1,500-word article. You need LinkedIn, Twitter, and a newsletter blurb – all in your brand voice.
 
 ```mermaid
 flowchart LR
-    A[Paste error<br/>into terminal] --> B[Claude reads<br/>relevant files]
-    B --> C[Plain-English<br/>diagnosis]
-    C --> D{Apply fix?}
-    D -->|yes| E[Claude edits files]
-    D -->|no| F[Just keep the diagnosis]
+    Blog[blog/launch.md] --> Claude
+    CL[CLAUDE.md<br/>brand voice] --> Claude
+    Claude --> LI[1 LinkedIn post]
+    Claude --> TW[5 tweets]
+    Claude --> NL[1 newsletter blurb]
 ```
 
 **On your screen:**
 
 ```
 ┌─ Terminal ──────────────────────────────────────────┐
-│   > [paste stack trace]                             │
-│   > Explain this in plain English. What likely      │
-│     caused it, and what's the fix?                  │
+│   > Read blog/launch.md. Use CLAUDE.md voice rules. │
+│     Generate:                                       │
+│     – 1 LinkedIn post (under 200 words, 1 emoji)    │
+│     – 5 tweets (under 250 chars, no emojis)         │
+│     – 1 newsletter blurb (3 sentences, no CTA)      │
 │                                                     │
-│   This is a TypeError because `user` was undefined  │
-│   when fetchProfile() ran. Looking at api/user.ts   │
-│   line 42, the `await` is missing on the database   │
-│   call. The fix: add `await`.                       │
-│                                                     │
-│   Want me to apply the fix? [y/N] _                 │
+│   Drafts ready. Save them under /social/ ?  [y/N]   │
 └─────────────────────────────────────────────────────┘
 ```
 
+Press `y` and you have a full week of social ready to schedule.
+
 ---
 
-## Example 4 – Plan Mode for bigger changes
+## Example 3 – Draft headlines that already sound like you
 
-**Use case:** A multi-file refactor you want Claude to think through first.
+**Use case:** Three headline variants for a feature launch, on-brand, under 10 words.
+
+**On your screen:**
+
+```
+┌─ Terminal ──────────────────────────────────────────┐
+│   > Write 3 headline variants for our "focus mode"  │
+│     launch. Use CLAUDE.md voice rules.              │
+│     Sentence case. Under 10 words each.             │
+│     Try 3 angles: benefit, skeptical, story.        │
+│                                                     │
+│   1. Stop pretending notifications aren't           │
+│      the problem.                                   │
+│   2. Focus mode: one button, your afternoon back.   │
+│   3. We tried it for a week. You should too.        │
+│   > _                                               │
+└─────────────────────────────────────────────────────┘
+```
+
+The point: Claude already knows your voice from `CLAUDE.md`, so you don't have to re-explain it every time.
+
+---
+
+## Example 4 – Tone-check and tighten existing copy
+
+**Use case:** A draft mentions "leverage" and "ecosystem". You want a clean edit, not a rewrite.
 
 ```mermaid
 flowchart LR
-    A[/plan in Claude/] --> B[Claude proposes<br/>step-by-step plan]
-    B --> C{You agree?}
-    C -->|edit plan| B
-    C -->|approve| D[Claude executes<br/>step by step]
+    A[post-draft.md] --> Claude
+    B[CLAUDE.md<br/>banned phrases] --> Claude
+    Claude --> C[Flagged lines<br/>+ replacements]
+    C --> D{Apply all?}
+    D -->|y| E[Edited file]
+    D -->|n| F[Keep originals]
 ```
 
 **On your screen:**
 
 ```
 ┌─ Terminal ──────────────────────────────────────────┐
-│   > /plan                                           │
-│   > Refactor the auth module to use the new         │
-│     session API. Don't change the public interface. │
+│   > Read post-draft.md. Flag every banned phrase    │
+│     from CLAUDE.md. Propose a one-line replacement  │
+│     for each. Don't change voice or structure.      │
 │                                                     │
-│   Plan:                                             │
-│   1. Inventory callers of authenticate()            │
-│   2. Replace internals with sessionApi.create()     │
-│   3. Update tests in auth/auth.test.ts              │
-│   4. Verify public types unchanged                  │
+│   - Line 12: "leverage our ecosystem"               │
+│              → "use what we built"                  │
+│   - Line 19: "world-class team"                     │
+│              → "team that's been there"             │
+│   - Line 27: "game-changer"                         │
+│              → "real shift"                         │
 │                                                     │
-│   Approve plan? [y/N/edit] _                        │
+│   Apply all? [y/N] _                                │
 └─────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Example 5 – Review before pushing
+## Example 5 – Translate without losing your voice
 
-**Use case:** A second pair of eyes before `git push`.
+**Use case:** Localize an email sequence to French and Spanish, brand voice preserved, no machine-translation feel.
+
+**On your screen:**
 
 ```
 ┌─ Terminal ──────────────────────────────────────────┐
-│   ~/repo $ claude                                   │
-│   > /review                                         │
+│   > Translate emails/welcome.md into French         │
+│     (formal "vous") and Spanish (neutral).          │
+│     Keep tone playful. Don't translate brand name   │
+│     or product feature names.                       │
 │                                                     │
-│   Reviewed your last 3 commits:                     │
-│   ✓ Tests look good                                 │
-│   ⚠ src/api.ts:88 – missing error handling for      │
-│     the timeout case                                │
-│   ⚠ Commit message is vague – consider rewording    │
+│   ✓ emails/welcome.fr.md                            │
+│   ✓ emails/welcome.es.md                            │
+│   ✓ emails/glossary.md  (preserved terms)           │
+│                                                     │
+│   Want me to translate the rest of /emails/ too?    │
 │   > _                                               │
 └─────────────────────────────────────────────────────┘
 ```
@@ -172,11 +166,11 @@ flowchart LR
 
 ## What's next?
 
-You've seen the loop: open a folder → run `claude` → ask in plain English. From here:
+You've seen the loop: open a folder → run `claude` → ask in plain English. Once you're comfortable:
 
-- **[Skills](https://docs.claude.com/en/docs/claude-code/skills)** – package reusable instructions Claude can invoke automatically
-- **[Hooks](https://docs.claude.com/en/docs/claude-code/hooks)** – run shell commands on tool events
-- **[MCP servers](https://docs.claude.com/en/docs/claude-code/mcp)** – give Claude access to your databases, APIs, internal tools
-- **[Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)** – delegate isolated tasks in parallel
+- **[Skills](https://docs.claude.com/en/docs/claude-code/skills)** – save reusable instructions ("turn any blog post into social") that Claude can invoke automatically.
+- **[Hooks](https://docs.claude.com/en/docs/claude-code/hooks)** – run shell commands on events (e.g. auto-tone-check before commit).
+- **[MCP servers](https://docs.claude.com/en/docs/claude-code/mcp)** – connect Claude to your CMS, analytics, or CRM.
+- **[Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)** – delegate isolated tasks (research, drafting, fact-checking) in parallel.
 
 Official docs: [docs.claude.com/en/docs/claude-code](https://docs.claude.com/en/docs/claude-code).
