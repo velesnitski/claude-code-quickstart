@@ -14,10 +14,7 @@ footer-left: "Claude Code Quickstart"
 footer-center: ""
 footer-right: "\\thepage"
 header-includes: |
-    \usepackage{graphicx}
-    \makeatletter
-    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-    \def\maxheight{\ifdim\Gin@nat@height>0.7\textheight 0.7\textheight\else\Gin@nat@height\fi}
-    \makeatother
-    \setkeys{Gin}{width=\maxwidth, height=\maxheight, keepaspectratio}
+    \usepackage[export]{adjustbox}
+    \let\originalincludegraphics\includegraphics
+    \renewcommand*{\includegraphics}[2][]{\originalincludegraphics[max width=\linewidth,max totalheight=0.7\textheight,keepaspectratio,#1]{#2}}
 ---
