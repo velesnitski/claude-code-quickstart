@@ -1,0 +1,24 @@
+---
+title: "Claude Code – 5-Minute Quickstart"
+subtitle: "The on-ramp for marketing, content & dev teams"
+titlepage: true
+titlepage-color: "1F2937"
+titlepage-text-color: "FFFFFF"
+titlepage-rule-color: "F59E0B"
+titlepage-rule-height: 4
+book: true
+footer-left: "claude-code-quickstart"
+footer-right: "github.com/velesnitski/claude-code-quickstart"
+header-includes: |
+    \usepackage{listings}
+    \lstset{
+      basicstyle=\ttfamily\scriptsize,
+      breaklines=false,
+      breakatwhitespace=false,
+      columns=fullflexible,
+      keepspaces=true,
+      showstringspaces=false,
+      extendedchars=true,
+      inputencoding=utf8,
+    }
+---

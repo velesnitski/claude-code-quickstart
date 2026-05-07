@@ -50,9 +50,13 @@ jobs:
 
       - name: Build combined PDF
         env:
-          MERMAID_FILTER_FORMAT: svg
+          # PNG, not SVG – SVG text labels disappear in xelatex via rsvg-convert
+          # because the embedded text uses web fonts not available to LaTeX.
+          # PNG rasterises the text into the image so labels always render.
+          MERMAID_FILTER_FORMAT: png
           MERMAID_FILTER_THEME: default
-          MERMAID_FILTER_BACKGROUND: transparent
+          MERMAID_FILTER_BACKGROUND: white
+          MERMAID_FILTER_SCALE: "2"
           MERMAID_FILTER_PUPPETEER_CONFIG: /tmp/puppeteer-config.json
         run: |
           # Puppeteer needs --no-sandbox in GitHub Actions runners
@@ -68,21 +72,11 @@ jobs:
             docs/04-examples.md
             CHEATSHEET.md
             --template eisvogel
+            --metadata-file pdf/meta.yml
             --pdf-engine=xelatex
             --listings
             --toc
             --toc-depth=2
-            --metadata "title=Claude Code – 5-Minute Quickstart"
-            --metadata "subtitle=The on-ramp for marketing, content & dev teams"
-            --metadata titlepage=true
-            --metadata titlepage-color=1F2937
-            --metadata titlepage-text-color=FFFFFF
-            --metadata titlepage-rule-color=F59E0B
-            --metadata titlepage-rule-height=4
-            --metadata book=true
-            --metadata "code-block-font-size=\footnotesize"
-            --metadata "footer-left=claude-code-quickstart"
-            --metadata "footer-right=github.com/velesnitski/claude-code-quickstart"
             -V geometry:landscape,margin=0.6in
             -V colorlinks=true
             -V linkcolor=NavyBlue
