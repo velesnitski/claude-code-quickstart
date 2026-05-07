@@ -7,7 +7,7 @@ titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "F59E0B"
 titlepage-rule-height: 4
 listings-disable-line-numbers: true
-code-block-font-size: \small
+code-block-font-size: \footnotesize
 page-background-opacity: 0.0
 footer-left: "Claude Code Quickstart"
 footer-center: ""
@@ -16,4 +16,20 @@ header-includes: |
     \usepackage[export]{adjustbox}
     \let\originalincludegraphics\includegraphics
     \renewcommand*{\includegraphics}[2][]{\originalincludegraphics[max width=\linewidth,max totalheight=0.7\textheight,keepaspectratio,#1]{#2}}
+    \AtBeginDocument{%
+      \lstset{%
+        basicstyle=\ttfamily\footnotesize,
+        keywordstyle={},
+        commentstyle={},
+        stringstyle={},
+        identifierstyle={},
+        breaklines=false,
+        columns=fullflexible,
+        keepspaces=true,
+        showstringspaces=false,
+        extendedchars=true,
+        inputencoding=utf8,
+        language={},
+      }%
+    }
 ---
