@@ -53,7 +53,12 @@ jobs:
           MERMAID_FILTER_FORMAT: svg
           MERMAID_FILTER_THEME: default
           MERMAID_FILTER_BACKGROUND: transparent
+          MERMAID_FILTER_PUPPETEER_CONFIG: /tmp/puppeteer-config.json
         run: |
+          # Puppeteer needs --no-sandbox in GitHub Actions runners
+          cat > /tmp/puppeteer-config.json <<'EOF'
+          {"args":["--no-sandbox","--disable-setuid-sandbox"]}
+          EOF
           set +e
           PANDOC_ARGS=(
             README.md
