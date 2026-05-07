@@ -6,7 +6,6 @@ titlepage-color: "1F2937"
 titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "F59E0B"
 titlepage-rule-height: 4
-book: true
 listings-disable-line-numbers: true
 code-block-font-size: \small
 page-background-opacity: 0.0

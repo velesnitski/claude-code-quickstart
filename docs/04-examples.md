@@ -29,7 +29,7 @@ sequenceDiagram
 
 > **Terminal**
 
-```text
+```
 ~/feedback $ claude
 
   > Read feedback.csv. Find the top 3 themes.
@@ -66,7 +66,7 @@ flowchart LR
 
 > **Terminal**
 
-```text
+```
   > Read blog/launch.md. Use CLAUDE.md voice rules.
     Generate:
     – 1 LinkedIn post (under 200 words, 1 emoji)
@@ -88,7 +88,7 @@ Press `y` and you have a full week of social ready to schedule.
 
 > **Terminal**
 
-```text
+```
   > Write 3 headline variants for our "focus mode"
     launch. Use CLAUDE.md voice rules.
     Sentence case. Under 10 words each.
@@ -122,7 +122,7 @@ flowchart LR
 
 > **Terminal**
 
-```text
+```
   > Read post-draft.md. Flag every banned phrase
     from CLAUDE.md. Propose a one-line replacement
     for each. Don't change voice or structure.
@@ -147,7 +147,7 @@ flowchart LR
 
 > **Terminal**
 
-```text
+```
   > Translate emails/welcome.md into French
     (formal "vous") and Spanish (neutral).
     Keep tone playful. Don't translate brand name

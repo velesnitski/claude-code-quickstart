@@ -10,7 +10,7 @@ It's the text-based window where you type commands. It looks like this:
 
 > **Terminal**
 
-```text
+```
 Last login: Tue May  6 09:14:22
 ~ $ _
 ```
@@ -68,7 +68,7 @@ Once your terminal is open, you'll see something like:
 
 > **Warp / Terminal**
 
-```text
+```
 ~ $ _
 ```
 

@@ -80,7 +80,7 @@ jobs:
             --listings
             --toc
             --toc-depth=2
-            -V geometry:landscape,margin=0.6in
+            -V geometry:landscape,top=0.7in,bottom=1.0in,left=0.7in,right=0.7in
             -V colorlinks=true
             -V linkcolor=NavyBlue
             -V urlcolor=NavyBlue

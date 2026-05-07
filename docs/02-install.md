@@ -128,7 +128,7 @@ After signing in:
 
 > **Terminal**
 
-```text
+```
 ~ $ claude
 
   ◆ Welcome to Claude Code
