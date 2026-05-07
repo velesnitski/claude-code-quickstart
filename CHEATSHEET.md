@@ -60,12 +60,12 @@ Verify: `claude --version` · Update: `claude update` · Diagnose: `claude docto
 
 ```
 project/
-├── CLAUDE.md                 ← the note for Claude
-└── .claude/
-    ├── settings.json         ← team settings (commit)
-    ├── settings.local.json   ← personal overrides (gitignore)
-    ├── commands/             ← your custom shortcuts
-    └── agents/               ← project-specific helpers
+  CLAUDE.md                 # the note for Claude
+  .claude/
+    settings.json           # team settings (commit)
+    settings.local.json     # personal overrides (gitignore)
+    commands/               # your custom shortcuts
+    agents/                 # project-specific helpers
 ```
 
 ---

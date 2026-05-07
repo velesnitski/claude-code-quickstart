@@ -25,12 +25,12 @@ flowchart LR
 
 ```
 my-project/
-├── CLAUDE.md             ← the note for Claude (you create this)
-├── .claude/              ← settings folder (optional)
-│   ├── settings.json     ← team-shared settings
-│   └── commands/         ← your custom shortcuts
-├── src/                  ← your code or content
-└── README.md             ← your project's own readme
+  CLAUDE.md             # the note for Claude (you create this)
+  .claude/              # settings folder (optional)
+    settings.json       # team-shared settings
+    commands/           # your custom shortcuts
+  src/                  # your code or content
+  README.md             # your project's own readme
 ```
 
 Don't worry about `.claude/` yet – we'll get to that. For now, just `CLAUDE.md`.
