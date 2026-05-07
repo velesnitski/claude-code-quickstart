@@ -41,9 +41,7 @@ jobs:
             --metadata-file pdf/meta.yml
             --pdf-engine=xelatex
             --listings
-            --toc
-            --toc-depth=2
-            -V geometry:landscape,top=0.7in,bottom=1.0in,left=0.7in,right=0.7in
+            -V geometry:top=0.8in,bottom=0.9in,left=0.7in,right=0.7in
             -V colorlinks=true
             -V linkcolor=NavyBlue
             -V urlcolor=NavyBlue

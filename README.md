@@ -8,7 +8,7 @@
 [![macOS](https://img.shields.io/badge/macOS-supported-success)](docs/02-install.md)
 [![Windows](https://img.shields.io/badge/Windows-supported-success)](docs/02-install.md)
 
-🌐 **Languages:** **English** · [Русский](README.ru.md)
+**Languages:** **English** · [Русский](README.ru.md)
 
 ---
 
@@ -30,7 +30,7 @@ flowchart LR
 
 That's the whole experience. You type. It works. You read.
 
-> 🎬 **60-second demo video** – coming soon. Want to record one? Open a PR linking it here.
+> **60-second demo video** – coming soon. Want to record one? Open a PR linking it here.
 
 ---
 
@@ -82,7 +82,7 @@ If you've never opened a terminal before – **start at [Step 1](docs/01-termina
 
 ## Liked it?
 
-If this guide saved you 5 minutes, **[give the repo a ⭐](../../stargazers)** – it's the best way to help others find it.
+If this guide saved you 5 minutes, **[give the repo a ★](../../stargazers)** – it's the best way to help others find it.
 
 ## Contributing
 

@@ -154,11 +154,11 @@ claude doctor       # deeper health check
 
 | What you see | What to do |
 |---|---|
-| `command not found: claude` (Mac) | Close & reopen the terminal. Check `which claude`. |
-| `claude is not recognized` (Windows) | Close & reopen PowerShell. Sign out / sign in to Windows so the PATH refreshes. |
-| `running scripts is disabled` (Windows) | `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, then retry. |
-| `'irm' is not recognized` (Windows) | You're in CMD, not PowerShell – use the CMD command above. |
-| The login keeps looping | `claude logout` then `claude` again. |
+| Mac says "command not found: claude" | Close & reopen the terminal. Check `which claude`. |
+| Windows says "claude is not recognized" | Close & reopen PowerShell. Sign out / sign in to Windows so the PATH refreshes. |
+| Windows says "running scripts is disabled" | Run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, then retry. |
+| Windows says "'irm' is not recognized" | You're in CMD, not PowerShell – use the CMD command above. |
+| The login keeps looping | Run `claude logout`, then `claude` again. |
 | "Invalid plan" or no Code access | Your Claude.ai account is on the **free** plan. Upgrade to Pro/Max/Team or use a Console account. |
 | Antivirus blocks the installer (Windows) | Allow it – the installer is signed by Anthropic. |
 

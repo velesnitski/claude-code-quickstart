@@ -112,12 +112,12 @@ Keep under 150 lines. Place at repo root. Commit it.
 
 | You see | Try |
 |---|---|
-| `command not found: claude` (Mac) | Restart terminal · `which claude` |
-| `claude is not recognized` (Windows) | Restart terminal · `where claude` |
-| `running scripts is disabled` (Win) | `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` |
-| Login loop | `claude logout` then `claude` |
-| Conversation feels off | `/clear` or `/compact` |
-| Want to undo Claude's edit | `git diff` then `git checkout -- <file>` |
+| Mac says "command not found: claude" | Restart terminal, run `which claude` |
+| Windows says "claude is not recognized" | Restart terminal, run `where claude` |
+| Windows says "running scripts is disabled" | Run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` |
+| Login loop | Run `claude logout`, then `claude` |
+| Conversation feels off | Use `/clear` or `/compact` |
+| Want to undo Claude's edit | Run `git diff`, then `git checkout -- <file>` |
 
 ---
 
