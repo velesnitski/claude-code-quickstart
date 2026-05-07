@@ -26,22 +26,22 @@ flowchart LR
 
 Here's what it actually looks like on screen:
 
-```
-┌─ Terminal ──────────────────────────────────────────┐
-│  ~/my-folder $ claude                               │
-│                                                     │
-│   ◆ Welcome to Claude Code                          │
-│   > what's in this folder?                          │
-│                                                     │
-│  Reading report.csv... done.                        │
-│  It's a Q1 sales report. Top product: Widget X.     │
-│  Three findings:                                    │
-│   1. Revenue up 12% over Q4.                        │
-│   2. Row 47 has a missing date — worth checking.    │
-│   3. APAC outperformed all regions (+22%).          │
-│                                                     │
-│   > _                                               │
-└─────────────────────────────────────────────────────┘
+> **Terminal**
+
+```text
+~/my-folder $ claude
+
+  ◆ Welcome to Claude Code
+  > what's in this folder?
+
+Reading report.csv... done.
+It's a Q1 sales report. Top product: Widget X.
+Three findings:
+  1. Revenue up 12% over Q4.
+  2. Row 47 has a missing date — worth checking.
+  3. APAC outperformed all regions (+22%).
+
+  > _
 ```
 
 That's the whole experience. You type. It works. You read.

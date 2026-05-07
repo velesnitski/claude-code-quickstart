@@ -8,13 +8,11 @@
 
 It's the text-based window where you type commands. It looks like this:
 
-```
-┌─ Terminal ──────────────────────────┐
-│  Last login: Tue May  6 09:14:22    │
-│  ~ $                                │
-│                                     │
-│                                     │
-└─────────────────────────────────────┘
+> **Terminal**
+
+```text
+Last login: Tue May  6 09:14:22
+~ $ _
 ```
 
 The blinking cursor after `$` is waiting for you to type. That's it. No mouse, no buttons – just text in, text out.
@@ -68,11 +66,10 @@ We recommend **[Warp](https://www.warp.dev/)** – it's free, modern, and built 
 
 Once your terminal is open, you'll see something like:
 
-```
-┌─ Warp / Terminal ───────────────────┐
-│  ~ $                                │
-│   _                                 │
-└─────────────────────────────────────┘
+> **Warp / Terminal**
+
+```text
+~ $ _
 ```
 
 The `$` (or `>` on Windows PowerShell) means it's ready. **You're done with this step.**

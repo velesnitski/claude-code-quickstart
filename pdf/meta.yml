@@ -7,18 +7,17 @@ titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "F59E0B"
 titlepage-rule-height: 4
 book: true
-footer-left: "claude-code-quickstart"
-footer-right: "github.com/velesnitski/claude-code-quickstart"
+listings-disable-line-numbers: true
+code-block-font-size: \small
+page-background-opacity: 0.0
+footer-left: "Claude Code Quickstart"
+footer-center: ""
+footer-right: "\\thepage"
 header-includes: |
-    \usepackage{listings}
-    \lstset{
-      basicstyle=\ttfamily\scriptsize,
-      breaklines=false,
-      breakatwhitespace=false,
-      columns=fullflexible,
-      keepspaces=true,
-      showstringspaces=false,
-      extendedchars=true,
-      inputencoding=utf8,
-    }
+    \usepackage{graphicx}
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+    \def\maxheight{\ifdim\Gin@nat@height>0.7\textheight 0.7\textheight\else\Gin@nat@height\fi}
+    \makeatother
+    \setkeys{Gin}{width=\maxwidth, height=\maxheight, keepaspectratio}
 ---

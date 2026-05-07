@@ -56,7 +56,8 @@ jobs:
           MERMAID_FILTER_FORMAT: png
           MERMAID_FILTER_THEME: default
           MERMAID_FILTER_BACKGROUND: white
-          MERMAID_FILTER_SCALE: "2"
+          MERMAID_FILTER_WIDTH: "1100"
+          MERMAID_FILTER_SCALE: "1.5"
           MERMAID_FILTER_PUPPETEER_CONFIG: /tmp/puppeteer-config.json
         run: |
           # Puppeteer needs --no-sandbox in GitHub Actions runners

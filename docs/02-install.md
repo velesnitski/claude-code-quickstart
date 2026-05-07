@@ -126,14 +126,13 @@ A browser window opens. Sign in with your Claude account (the one with your paid
 
 After signing in:
 
-```
-┌─ Terminal ──────────────────────────┐
-│  ~ $ claude                         │
-│                                     │
-│   ◆ Welcome to Claude Code          │
-│   >  _                              │
-│                                     │
-└─────────────────────────────────────┘
+> **Terminal**
+
+```text
+~ $ claude
+
+  ◆ Welcome to Claude Code
+  > _
 ```
 
 The `>` is Claude waiting for you to type a question. **You're installed and ready.**

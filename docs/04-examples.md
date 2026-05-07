@@ -27,24 +27,24 @@ sequenceDiagram
 
 **On your screen:**
 
-```
-┌─ Terminal ──────────────────────────────────────────┐
-│  ~/feedback $ claude                                │
-│                                                     │
-│   > Read feedback.csv. Find the top 3 themes.       │
-│     For each: 2 verbatim quotes + suggested fix.    │
-│                                                     │
-│   Reading 412 rows... done.                         │
-│                                                     │
-│   1. Onboarding friction (87 mentions)              │
-│      "Took 4 days to figure out the import flow."   │
-│      "Wish there was a setup wizard."               │
-│      → suggest: build a guided first-run.           │
-│                                                     │
-│   2. Pricing confusion (54)                         │
-│   3. Missing export (38)                            │
-│   > _                                               │
-└─────────────────────────────────────────────────────┘
+> **Terminal**
+
+```text
+~/feedback $ claude
+
+  > Read feedback.csv. Find the top 3 themes.
+    For each: 2 verbatim quotes + suggested fix.
+
+  Reading 412 rows... done.
+
+  1. Onboarding friction (87 mentions)
+     "Took 4 days to figure out the import flow."
+     "Wish there was a setup wizard."
+     → suggest: build a guided first-run.
+
+  2. Pricing confusion (54)
+  3. Missing export (38)
+  > _
 ```
 
 ---
@@ -64,16 +64,16 @@ flowchart LR
 
 **On your screen:**
 
-```
-┌─ Terminal ──────────────────────────────────────────┐
-│   > Read blog/launch.md. Use CLAUDE.md voice rules. │
-│     Generate:                                       │
-│     – 1 LinkedIn post (under 200 words, 1 emoji)    │
-│     – 5 tweets (under 250 chars, no emojis)         │
-│     – 1 newsletter blurb (3 sentences, no CTA)      │
-│                                                     │
-│   Drafts ready. Save them under /social/ ?  [y/N]   │
-└─────────────────────────────────────────────────────┘
+> **Terminal**
+
+```text
+  > Read blog/launch.md. Use CLAUDE.md voice rules.
+    Generate:
+    – 1 LinkedIn post (under 200 words, 1 emoji)
+    – 5 tweets (under 250 chars, no emojis)
+    – 1 newsletter blurb (3 sentences, no CTA)
+
+  Drafts ready. Save them under /social/ ?  [y/N]
 ```
 
 Press `y` and you have a full week of social ready to schedule.
@@ -86,19 +86,18 @@ Press `y` and you have a full week of social ready to schedule.
 
 **On your screen:**
 
-```
-┌─ Terminal ──────────────────────────────────────────┐
-│   > Write 3 headline variants for our "focus mode"  │
-│     launch. Use CLAUDE.md voice rules.              │
-│     Sentence case. Under 10 words each.             │
-│     Try 3 angles: benefit, skeptical, story.        │
-│                                                     │
-│   1. Stop pretending notifications aren't           │
-│      the problem.                                   │
-│   2. Focus mode: one button, your afternoon back.   │
-│   3. We tried it for a week. You should too.        │
-│   > _                                               │
-└─────────────────────────────────────────────────────┘
+> **Terminal**
+
+```text
+  > Write 3 headline variants for our "focus mode"
+    launch. Use CLAUDE.md voice rules.
+    Sentence case. Under 10 words each.
+    Try 3 angles: benefit, skeptical, story.
+
+  1. Stop pretending notifications aren't the problem.
+  2. Focus mode: one button, your afternoon back.
+  3. We tried it for a week. You should too.
+  > _
 ```
 
 The point: Claude already knows your voice from `CLAUDE.md`, so you don't have to re-explain it every time.
@@ -121,21 +120,21 @@ flowchart LR
 
 **On your screen:**
 
-```
-┌─ Terminal ──────────────────────────────────────────┐
-│   > Read post-draft.md. Flag every banned phrase    │
-│     from CLAUDE.md. Propose a one-line replacement  │
-│     for each. Don't change voice or structure.      │
-│                                                     │
-│   - Line 12: "leverage our ecosystem"               │
-│              → "use what we built"                  │
-│   - Line 19: "world-class team"                     │
-│              → "team that's been there"             │
-│   - Line 27: "game-changer"                         │
-│              → "real shift"                         │
-│                                                     │
-│   Apply all? [y/N] _                                │
-└─────────────────────────────────────────────────────┘
+> **Terminal**
+
+```text
+  > Read post-draft.md. Flag every banned phrase
+    from CLAUDE.md. Propose a one-line replacement
+    for each. Don't change voice or structure.
+
+  - Line 12: "leverage our ecosystem"
+             → "use what we built"
+  - Line 19: "world-class team"
+             → "team that's been there"
+  - Line 27: "game-changer"
+             → "real shift"
+
+  Apply all? [y/N] _
 ```
 
 ---
@@ -146,20 +145,20 @@ flowchart LR
 
 **On your screen:**
 
-```
-┌─ Terminal ──────────────────────────────────────────┐
-│   > Translate emails/welcome.md into French         │
-│     (formal "vous") and Spanish (neutral).          │
-│     Keep tone playful. Don't translate brand name   │
-│     or product feature names.                       │
-│                                                     │
-│   ✓ emails/welcome.fr.md                            │
-│   ✓ emails/welcome.es.md                            │
-│   ✓ emails/glossary.md  (preserved terms)           │
-│                                                     │
-│   Want me to translate the rest of /emails/ too?    │
-│   > _                                               │
-└─────────────────────────────────────────────────────┘
+> **Terminal**
+
+```text
+  > Translate emails/welcome.md into French
+    (formal "vous") and Spanish (neutral).
+    Keep tone playful. Don't translate brand name
+    or product feature names.
+
+  ✓ emails/welcome.fr.md
+  ✓ emails/welcome.es.md
+  ✓ emails/glossary.md  (preserved terms)
+
+  Want me to translate the rest of /emails/ too?
+  > _
 ```
 
 ---
