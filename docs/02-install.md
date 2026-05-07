@@ -137,7 +137,7 @@ After signing in:
 
 The `>` is Claude waiting for you to type a question. **You're installed and ready.**
 
-Press <kbd>Ctrl</kbd>+<kbd>C</kbd> to exit any time.
+Press `Ctrl+C` to exit any time.
 
 ---
 

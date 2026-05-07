@@ -36,8 +36,8 @@ Verify: `claude --version` · Update: `claude update` · Diagnose: `claude docto
 | `claude "summarize feedback.csv"` | One-shot prompt, then exit |
 | `claude -c` | Continue the most recent session |
 | `claude --resume` | Pick a past session to resume |
-| <kbd>Ctrl</kbd>+<kbd>C</kbd> | Cancel / exit |
-| <kbd>Esc</kbd> | Interrupt Claude mid-response |
+| `Ctrl+C` | Cancel / exit |
+| `Esc` | Interrupt Claude mid-response |
 
 ---
 

@@ -47,7 +47,7 @@ We recommend **[Warp](https://www.warp.dev/)** – it's free, modern, and built 
 3. Open Warp from your Applications folder.
 
 **Option B – Terminal (already on your Mac):**
-1. Press <kbd>Cmd</kbd>+<kbd>Space</kbd>, type "Terminal", press Enter.
+1. Press `Cmd+Space`, type "Terminal", press Enter.
 
 ### On Windows
 
