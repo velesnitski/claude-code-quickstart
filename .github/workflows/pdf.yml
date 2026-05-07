@@ -20,6 +20,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build combined PDF
+        shell: bash
         env:
           MERMAID_FILTER_FORMAT: png
           MERMAID_FILTER_THEME: default
