@@ -34,13 +34,13 @@ jobs:
 
       - name: Download Eisvogel template
         run: |
-          mkdir -p ~/.pandoc/templates
-          cd /tmp
-          curl -fsSL -o eisvogel.tar.gz \
-            https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v3.2.0/Eisvogel-3.2.0.tar.gz
-          tar -xzf eisvogel.tar.gz
-          find . -name 'eisvogel.latex' -exec cp {} ~/.pandoc/templates/ \;
+          mkdir -p ~/.pandoc/templates /tmp/eisvogel
+          curl -fsSL -o /tmp/eisvogel/Eisvogel.tar.gz \
+            https://github.com/Wandmalfarbe/pandoc-latex-template/releases/latest/download/Eisvogel.tar.gz
+          tar -xzf /tmp/eisvogel/Eisvogel.tar.gz -C /tmp/eisvogel
+          find /tmp/eisvogel -name 'eisvogel.latex' -exec cp {} ~/.pandoc/templates/ \;
           ls -la ~/.pandoc/templates/
+          test -f ~/.pandoc/templates/eisvogel.latex
 
       - name: Build combined PDF
         env:
