@@ -55,6 +55,10 @@ That's the whole experience. You type. It works. You read.
 | **Mac** / Linux | `curl -fsSL https://claude.ai/install.sh \| bash` |
 | **Windows** (PowerShell) | `irm https://claude.ai/install.ps1 \| iex` |
 
+> **Important:** Claude Code needs a **paid Claude plan** (Pro / Max / Team / Enterprise) or a **Console account** with API credits. The free Claude.ai plan doesn't include it. See [pricing](https://claude.com/pricing).
+>
+> **Prefer no terminal?** Get the **[Desktop app](https://claude.com/download)** – same agent, regular app window.
+
 Don't have a terminal yet? Start at **[Step 1](docs/01-terminal.md)** below.
 
 ---

@@ -80,10 +80,10 @@ jobs:
             --metadata titlepage-rule-color=F59E0B
             --metadata titlepage-rule-height=4
             --metadata book=true
-            --metadata classoption=oneside
+            --metadata "code-block-font-size=\footnotesize"
             --metadata "footer-left=claude-code-quickstart"
             --metadata "footer-right=github.com/velesnitski/claude-code-quickstart"
-            -V geometry:margin=1in
+            -V geometry:landscape,margin=0.6in
             -V colorlinks=true
             -V linkcolor=NavyBlue
             -V urlcolor=NavyBlue
