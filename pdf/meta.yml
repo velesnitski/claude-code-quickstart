@@ -19,12 +19,6 @@ header-includes: |
     \let\originalincludegraphics\includegraphics
     \renewcommand*{\includegraphics}[2][]{\originalincludegraphics[max width=\linewidth,max totalheight=0.45\textheight,keepaspectratio,#1]{#2}}
 
-    \usepackage{titlesec}
-    \titlespacing*{\section}{0pt}{1.2em plus 0.2em minus 0.1em}{0.5em}
-    \titlespacing*{\subsection}{0pt}{0.9em plus 0.2em minus 0.1em}{0.35em}
-    \titlespacing*{\subsubsection}{0pt}{0.7em plus 0.1em minus 0.1em}{0.25em}
-    \titlespacing*{\paragraph}{0pt}{0.5em plus 0.1em minus 0.05em}{0.3em}
-
     \setlength{\parskip}{0.35em plus 0.1em minus 0.05em}
     \setlength{\parindent}{0pt}
 
