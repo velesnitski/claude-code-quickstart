@@ -34,6 +34,26 @@ That's the whole experience. You type. It works. You read.
 
 ---
 
+## How Claude works (the safe loop)
+
+Claude doesn't just blurt out edits. Every action runs through a loop:
+
+```mermaid
+flowchart LR
+    Gather["Gather<br/>reads your files,<br/>CLAUDE.md, project"] --> Plan["Propose<br/>shows the change<br/>before doing it"]
+    Plan -- "you approve" --> Act["Act<br/>edits, runs commands,<br/>creates files"]
+    Act --> Verify["Verify<br/>checks output,<br/>flags issues"]
+    Verify -.-> Gather
+```
+
+Three things to know:
+
+- **Nothing changes without your "yes."** Claude shows the diff and asks before editing.
+- **Use Plan Mode** (`/plan`) to see the *full* plan before any work starts – good for bigger changes.
+- **Read your `CLAUDE.md`** – the more context that file gives, the less Claude has to ask.
+
+---
+
 ## Install in one line
 
 | Your computer | Paste this in your terminal |
