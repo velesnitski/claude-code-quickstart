@@ -82,8 +82,9 @@ flowchart LR
 
 ## Куда дальше
 
-Когда базовое вы освоите, есть куда углубиться:
+Когда базовое освоите, есть куда углубиться:
 
+- **Бесплатные официальные курсы Anthropic** – [anthropic.skilljar.com](https://anthropic.skilljar.com/) – начните с **Claude Code 101**, затем **Introduction to Agent Skills** и **Introduction to Subagents**.
 - **Подробный референс** – [Florian Bruniaux's Ultimate Guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide) (4k звёзд, очень подробно)
 - **Живой референс** – [Cranot's Claude Code Guide](https://github.com/Cranot/claude-code-guide) (автообновление каждые 2 дня)
 - **Инструменты и расширения** – [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)

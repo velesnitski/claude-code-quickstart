@@ -163,6 +163,26 @@ flowchart LR
 
 ---
 
+## Make it reusable: turn examples into skills
+
+Each prompt above can become a one-line shortcut you (or your team) reuse forever. Save the prompt once as a **skill**, then call it by name from any project:
+
+```mermaid
+flowchart LR
+    P["Found a prompt<br/>that works"] --> Save["Save once as a skill<br/>~/.claude/skills/&lt;name&gt;.md"]
+    Save --> Reuse["Reuse anywhere:<br/>'use &lt;name&gt; skill'"]
+    Reuse -.same prompt, every time.-> P
+```
+
+A skill is a tiny markdown file describing when to use it and what to do. The five examples above are obvious candidates: `find-themes`, `repurpose-blog`, `headline-variants`, `tone-check`, `localize`. Build them once, your whole team gets the same on-brand output every time.
+
+**Learn more:**
+
+- Anthropic's free hands-on course – **[Introduction to Agent Skills](https://anthropic.skilljar.com/)** (Skilljar).
+- Reference format and built-in vs custom skills – [docs.claude.com/en/docs/claude-code/skills](https://docs.claude.com/en/docs/claude-code/skills).
+
+---
+
 ## What's next?
 
 You've seen the loop: open a folder → run `claude` → ask in plain English. Once you're comfortable:

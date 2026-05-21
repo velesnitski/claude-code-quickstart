@@ -86,7 +86,10 @@ Bonus: **[One-page cheatsheet](CHEATSHEET.md)** · **[PDF download](https://gith
 
 The other excellent guides – [Florian Bruniaux's Ultimate Guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide), [Cranot's Guide](https://github.com/Cranot/claude-code-guide), [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) – are 10,000+ lines each. Brilliant references, overwhelming for newcomers.
 
-**This is the on-ramp.** Twelve minutes. Plain language. Pictures. Then graduate to the long guides if you want depth.
+**This is the on-ramp.** Twelve minutes. Plain language. Pictures. When you're done, graduate:
+
+- **Free official courses** – [Anthropic on Skilljar](https://anthropic.skilljar.com/) – start with **Claude Code 101**, then **Introduction to Agent Skills** and **Introduction to Subagents**.
+- **Long-form references** – the guides linked above for exhaustive depth.
 
 ---
 
