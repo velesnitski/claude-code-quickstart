@@ -1,0 +1,43 @@
+# Project: Brightpath — content marketing
+
+> Rename this file to `CLAUDE.md` at the root of your project. Replace
+> every Brightpath-specific detail with your own brand. Keep the
+> structure — that's what makes Claude's output consistent.
+
+## Who we are
+
+A focus-and-productivity app for knowledge workers. ~80% of users are solo creators or small-team operators who value calm tools over feature bloat.
+
+## Audience
+
+- Primary: creators / operators aged 28 to 45, multitaskers, skim-readers.
+- Reading level: 8th grade. Hemingway score 5 or below.
+
+## Brand voice
+
+Calm, candid, slightly playful.
+
+- Say: "you", "let's", short sentences, concrete verbs.
+- Don't say: leverage, synergy, game-changer, ecosystem, world-class.
+
+## Style rules
+
+- Headlines: 6 to 10 words, sentence case (not Title Case).
+- CTAs verb-first: "Start free trial", "See pricing".
+- Oxford comma: yes. Em-dash: yes. Semicolons: avoid.
+- Emojis: in social posts only, never in blog headers.
+
+## What's in this folder
+
+- `/blog`          drafts (publish via Webflow)
+- `/social`        LinkedIn-first, Twitter cross-post
+- `/newsletter`    weekly Friday digest
+- `/analytics`     GA4 + email exports
+- `/assets`        logos — read-only
+
+## Banned (legal + brand)
+
+- No name-by-name comparison to other productivity apps.
+- No "10x your output" / "guaranteed" / "world-class".
+- Pricing claims only with a /sources citation.
+- Never quote a customer without written approval.

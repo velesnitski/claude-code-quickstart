@@ -82,6 +82,23 @@ Bonus: **[One-page cheatsheet](CHEATSHEET.md)** · **[PDF download](https://gith
 
 ---
 
+## Starter pack (drop into your project)
+
+Everything in the four steps above pays off faster if you start from the **[starter-pack](starter-pack/)** folder:
+
+- `CLAUDE.md.example` — a filled-in brand-voice file. Tweak the placeholders, save as `CLAUDE.md` at your repo root, done.
+- `prompts/` — five battle-tested copy-paste prompts: find feedback themes, blog → social, headline variants, tone-check, localize.
+
+```bash
+# get just the starter pack
+curl -L https://github.com/velesnitski/claude-code-quickstart/archive/refs/heads/main.tar.gz \
+  | tar -xz --strip=2 claude-code-quickstart-main/starter-pack
+```
+
+Adapt the brand voice in `CLAUDE.md`, then use the prompts as-is.
+
+---
+
 ## Why this guide?
 
 The other excellent guides – [Florian Bruniaux's Ultimate Guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide), [Cranot's Guide](https://github.com/Cranot/claude-code-guide), [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) – are 10,000+ lines each. Brilliant references, overwhelming for newcomers.

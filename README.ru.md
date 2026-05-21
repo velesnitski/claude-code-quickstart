@@ -70,6 +70,23 @@ flowchart LR
 
 ---
 
+## Стартовый набор (положите в свой проект)
+
+Четыре шага выше окупаются быстрее, если стартовать из папки **[starter-pack](starter-pack/)**:
+
+- `CLAUDE.md.example` — заполненный файл с правилами бренда. Подменяете placeholder-ы под свой бренд, сохраняете как `CLAUDE.md` в корне репо — готово.
+- `prompts/` — пять готовых copy-paste промптов: темы из обратной связи, блог → соцсети, варианты заголовков, проверка тона, локализация.
+
+```bash
+# забрать только starter-pack
+curl -L https://github.com/velesnitski/claude-code-quickstart/archive/refs/heads/main.tar.gz \
+  | tar -xz --strip=2 claude-code-quickstart-main/starter-pack
+```
+
+Адаптируете `CLAUDE.md` под свой голос — и промпты работают как есть.
+
+---
+
 ## Для кого это?
 
 - **Маркетологи и контент-команды**, которые рассказывают коллегам про Claude Code.
