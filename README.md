@@ -69,7 +69,7 @@ Don't have a terminal yet? Start at **[Step 1](docs/01-terminal.md)** below.
 
 ---
 
-## The five steps
+## The six steps
 
 | # | Section | What you'll learn | Time |
 |---|---|---|---|
@@ -78,6 +78,7 @@ Don't have a terminal yet? Start at **[Step 1](docs/01-terminal.md)** below.
 | 3 | **[Set up a project](docs/03-folders.md)** | What folders Claude looks at, and how to help it | 3 min |
 | 4 | **[Try real examples](docs/04-examples.md)** | Five things to do today | 5 min |
 | 5 | **[Best practices](docs/05-best-practices.md)** | Six habits that matter, and old advice to drop | 3 min |
+| 6 | **[For CTOs and team leads](docs/06-for-leaders.md)** | Claude as a chief of staff: daily pulse, anomaly sweep, autonomy ladder | 4 min |
 
 Bonus: **[One-page cheatsheet](CHEATSHEET.md)** · **[PDF download](https://github.com/velesnitski/claude-code-quickstart/releases/latest)**
 
@@ -117,6 +118,7 @@ The other excellent guides – [Florian Bruniaux's Ultimate Guide](https://githu
 - **Marketing & content folks** explaining Claude Code to others.
 - **Developers** wanting a fast on-ramp before diving into the long guides.
 - **Team leads** onboarding people to AI-assisted workflows.
+- **CTOs and managers** who don't write code but need to see what matters across chat, email and the tracker – go straight to **[Step 6](docs/06-for-leaders.md)**.
 
 If you've never opened a terminal before – **start at [Step 1](docs/01-terminal.md)**. We'll walk you through it.
 

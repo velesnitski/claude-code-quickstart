@@ -123,4 +123,4 @@ From [claude.dev](https://claude.dev/), the blog by Anthropic's developers:
 
 ---
 
-**Back to:** [README](../README.md) · **Print:** [Cheatsheet](../CHEATSHEET.md)
+**Next:** [For CTOs and team leads →](06-for-leaders.md) · **Print:** [Cheatsheet](../CHEATSHEET.md)
