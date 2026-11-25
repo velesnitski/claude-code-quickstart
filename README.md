@@ -107,6 +107,7 @@ The other excellent guides – [Florian Bruniaux's Ultimate Guide](https://githu
 **This is the on-ramp.** Fifteen minutes. Plain language. Pictures. When you're done, graduate:
 
 - **Free official courses** – [Anthropic on Skilljar](https://anthropic.skilljar.com/) – start with **Claude Code 101**, then **Introduction to Agent Skills** and **Introduction to Subagents**.
+- **[claude.dev](https://claude.dev/)** – tips and playbooks from Anthropic's developers. Start with [A practical guide to shipping with Claude Code](https://claude.dev/blog/the-work-after-you-open-a-pr/).
 - **Long-form references** – the guides linked above for exhaustive depth.
 
 ---

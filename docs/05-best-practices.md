@@ -2,7 +2,7 @@
 
 > **Time:** 3 min · **Goal:** Six habits that decide whether Claude gets it right the first time.
 >
-> **Checked against the official docs on 25 November 2026.** Claude Code changes fast. If something here looks off, trust the [official best practices](https://code.claude.com/docs/en/best-practices).
+> **Checked against the official docs and [claude.dev](https://claude.dev/) on 25 November 2026.** Claude Code changes fast. If something here looks off, trust the [official best practices](https://code.claude.com/docs/en/best-practices).
 
 ---
 
@@ -43,7 +43,9 @@ Claude stops when the work *looks* done. Give it something that comes back pass 
 - **For content:** *"After writing, re-read against the banned list in CLAUDE.md and fix every hit. Show me the list of what you changed."*
 - **For code:** *"Run the tests after, and keep going until they pass."*
 - **Always ask for evidence:** the command it ran and the output, not just "all good".
-- **Want a second opinion?** `/code-review` reviews the changes with a fresh pair of eyes that never saw your conversation.
+- **Want a second opinion?** `/code-review` reviews the changes with a fresh pair of eyes that never saw your conversation. Run it before you push.
+- **Checking the same way every time?** Save the steps as a `verify` skill at `.claude/skills/verify/SKILL.md`: how to open the result and what to look at. Run it until you trust it.
+- **Don't let a check be gamed.** If Claude can't make a check pass after three tries, stop and look yourself. Never accept "I skipped the failing test".
 
 ## Habit 4 – One task, one session
 
@@ -70,6 +72,19 @@ Watch the first minute. That's when a wrong direction is cheapest to fix.
 - **A prompt you reuse** becomes a **skill**: a small file at `.claude/skills/<name>/SKILL.md`. You call it with `/<name>`, and Claude can pick it up by itself when the task fits.
 - **A rule with no exceptions** ("never edit `/assets`") does not belong in a prompt or in `CLAUDE.md`. Use a **deny rule** in `/permissions` or a **hook**. Those are enforced every time, whatever Claude decides.
 - **Rule of thumb:** if you keep adding "IMPORTANT" to a line and Claude still misses it, it should be a rule, not a line.
+- **Corrected the same thing on two pieces of work?** That is the bar for writing it down in `CLAUDE.md`.
+
+---
+
+## Which model?
+
+Stay on the default. When an answer isn't good enough, go in this order:
+
+1. **Give Claude a check to run** (Habit 3). Most "the model isn't smart enough" problems are really "it couldn't see it was wrong".
+2. **Raise the effort level** one step in `/model`.
+3. **Only then switch to a bigger model**, and start it at a lower effort.
+
+Which model fits which task changes with every release: see [Which Claude model should you build with?](https://claude.dev/blog/which-claude-model-should-you-build-with/)
 
 ---
 
@@ -95,6 +110,16 @@ Five questions for any long task you won't be watching:
 3. **What is it allowed to touch?**
 4. **What stops it?** A limit on time or spend.
 5. **Who signs off?** A person approves anything you can't take back.
+
+---
+
+## Read more
+
+From [claude.dev](https://claude.dev/), the blog by Anthropic's developers:
+
+- [A practical guide to shipping with Claude Code](https://claude.dev/blog/the-work-after-you-open-a-pr/) – review, shipping and what to keep doing by hand.
+- [How the Claude Code team thinks about verification](https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/) – the long version of Habit 3.
+- [Building effective agent automations](https://claude.dev/blog/building-effective-agent-automations/) – for when you leave Claude running alone.
 
 ---
 

@@ -192,7 +192,7 @@ You've seen the loop: open a folder → run `claude` → ask in plain English. N
 - **[MCP servers](https://code.claude.com/docs/en/mcp)** – connect Claude to your CMS, analytics, or CRM.
 - **[Subagents](https://code.claude.com/docs/en/sub-agents)** – delegate isolated tasks (research, drafting, fact-checking) in parallel.
 
-Official docs: [code.claude.com/docs](https://code.claude.com/docs).
+Official docs: [code.claude.com/docs](https://code.claude.com/docs) · Tips from Anthropic's developers: [claude.dev](https://claude.dev/).
 
 ---
 

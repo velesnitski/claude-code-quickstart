@@ -106,6 +106,7 @@ curl -L https://github.com/velesnitski/claude-code-quickstart/archive/refs/heads
 - **Подробный референс** – [Florian Bruniaux's Ultimate Guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide) (4k звёзд, очень подробно)
 - **Живой референс** – [Cranot's Claude Code Guide](https://github.com/Cranot/claude-code-guide) (автообновление каждые 2 дня)
 - **Инструменты и расширения** – [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)
+- **Блог разработчиков Anthropic** – [claude.dev](https://claude.dev/): советы и разборы от команды Claude Code
 - **Официальная документация** – [code.claude.com/docs](https://code.claude.com/docs)
 
 ---
