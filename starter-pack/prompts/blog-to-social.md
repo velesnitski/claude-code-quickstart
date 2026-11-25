@@ -15,4 +15,4 @@ Generate:
 Save them under social/<post-name>.md. Don't change the source article.
 ```
 
-**Tip:** Run a `/review` after Claude generates to spot any banned phrases that slipped through. Most reliable when CLAUDE.md has a strong "Don't say" list.
+**Tip:** End the prompt with *"then re-read every draft against the Don't-say list in CLAUDE.md, fix every hit and list what you changed"* to catch banned phrases that slipped through. Most reliable when CLAUDE.md has a strong "Don't say" list.

@@ -35,6 +35,7 @@ jobs:
             docs/02-install.md
             docs/03-folders.md
             docs/04-examples.md
+            docs/05-best-practices.md
             CHEATSHEET.md
             --data-dir /root/.pandoc
             --template eisvogel

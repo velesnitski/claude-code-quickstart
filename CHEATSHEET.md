@@ -1,6 +1,6 @@
 # Claude Code Cheatsheet
 
-> One page. Print it. Stick it next to your monitor.
+> One page. Print it. Stick it next to your monitor. · Checked 25 November 2026.
 
 ---
 
@@ -36,8 +36,11 @@ Verify: `claude --version` · Update: `claude update` · Diagnose: `claude docto
 | `claude "summarize feedback.csv"` | One-shot prompt, then exit |
 | `claude -c` | Continue the most recent session |
 | `claude --resume` | Pick a past session to resume |
+| `claude --resume <name>` | Resume a session you named with `/rename` |
+| `Esc` | Stop Claude mid-action, keep the work so far |
+| `Esc` `Esc` | Open the rewind menu (undo files and/or conversation) |
+| `Shift+Tab` | Switch mode: auto / Manual / Plan |
 | `Ctrl+C` | Cancel / exit |
-| `Esc` | Interrupt Claude mid-response |
 
 ---
 
@@ -46,13 +49,18 @@ Verify: `claude --version` · Update: `claude update` · Diagnose: `claude docto
 | Command | Purpose |
 |---|---|
 | `/init` | Create a `CLAUDE.md` for the current folder |
-| `/help` | List all commands |
 | `/plan` | Plan Mode – propose steps, wait for approval |
-| `/clear` | Reset conversation (keeps `CLAUDE.md`) |
-| `/review` | Review the current branch / PR |
-| `/compact` | Compress long conversation to free memory |
-| `/cost` | Show tokens and cost so far |
-| `/model` | Switch model (Opus / Sonnet / Haiku) |
+| `/clear` | New conversation (keeps `CLAUDE.md`). Use between unrelated tasks |
+| `/rewind` | Undo: roll files and/or conversation back |
+| `/btw <question>` | Side question that doesn't clutter the session |
+| `/code-review` | Fresh-eyes review of your changes |
+| `/usage` | Cost so far and plan limits |
+| `/model` | Switch model and thinking effort |
+| `/permissions` | Allow, ask and deny rules |
+| `/skills` | List your skills |
+| `/doctor` | Check setup, suggest `CLAUDE.md` cuts |
+| `/powerup` | Short interactive lessons on features |
+| `/help` | List all commands |
 
 ---
 
@@ -64,8 +72,9 @@ project/
   .claude/
     settings.json           # team settings (commit)
     settings.local.json     # personal overrides (gitignore)
-    commands/               # your custom shortcuts
+    skills/<name>/SKILL.md  # reusable prompts, called with /<name>
     agents/                 # project-specific helpers
+  CLAUDE.local.md           # your personal notes (gitignore)
 ```
 
 ---
@@ -92,7 +101,7 @@ One paragraph.
 - Auth quirks, env vars, flaky tests
 ```
 
-Keep under 150 lines. Place at repo root. Commit it.
+Keep under 200 lines. Only what Claude can't work out from the files. Place at repo root. Commit it.
 
 ---
 
@@ -104,7 +113,7 @@ Keep under 150 lines. Place at repo root. Commit it.
 4. **Edit & tone-check** – flag banned phrases from `CLAUDE.md`, suggest tighter alternatives.
 5. **Localize without losing brand** – translate campaigns; voice and glossary preserved.
 
-> **Working on code?** The same five patterns apply: analyze logs, generate tests, refactor with `/plan`, fix stack traces, `/review` before pushing.
+> **Working on code?** The same five patterns apply: analyze logs, generate tests, refactor with `/plan`, fix stack traces, `/code-review` before pushing.
 
 ---
 
@@ -115,10 +124,12 @@ Keep under 150 lines. Place at repo root. Commit it.
 | Mac says "command not found: claude" | Restart terminal, run `which claude` |
 | Windows says "claude is not recognized" | Restart terminal, run `where claude` |
 | Windows says "running scripts is disabled" | Run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` |
-| Login loop | Run `claude logout`, then `claude` |
-| Conversation feels off | Use `/clear` or `/compact` |
-| Want to undo Claude's edit | Run `git diff`, then `git checkout -- <file>` |
+| Login loop | Run `claude auth logout`, then `claude` |
+| Claude is heading the wrong way | Press `Esc`, redirect. After two failed corrections: `/clear` and a better prompt |
+| Want to undo Claude's edit | `/rewind` (or `Esc` twice). Git as backup: `git diff`, `git checkout -- <file>` |
+| Claude asks permission too often | `/fewer-permission-prompts` |
+| Claude keeps ignoring a rule | Make it a deny rule in `/permissions`, not a line in `CLAUDE.md` |
 
 ---
 
-**Full guide:** [README.md](README.md) · **Official docs:** [docs.claude.com](https://docs.claude.com/en/docs/claude-code)
+**Full guide:** [README.md](README.md) · **Best practices:** [docs/05](docs/05-best-practices.md) · **Official docs:** [code.claude.com/docs](https://code.claude.com/docs)

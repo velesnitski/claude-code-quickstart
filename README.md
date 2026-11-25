@@ -34,23 +34,23 @@ That's the whole experience. You type. It works. You read.
 
 ---
 
-## How Claude works (the safe loop)
+## How Claude works (the loop)
 
-Claude doesn't just blurt out edits. Every action runs through a loop:
+Claude doesn't answer once and stop. It works in a loop until the task is done:
 
 ```mermaid
 flowchart LR
-    Gather["Gather<br/>reads your files,<br/>CLAUDE.md, project"] --> Plan["Propose<br/>shows the change<br/>before doing it"]
-    Plan -- "you approve" --> Act["Act<br/>edits, runs commands,<br/>creates files"]
-    Act --> Verify["Verify<br/>checks output,<br/>flags issues"]
+    Gather["Gather<br/>reads your files,<br/>CLAUDE.md, project"] --> Act["Act<br/>edits, runs commands,<br/>creates files"]
+    Act --> Verify["Verify<br/>runs the check,<br/>reads the result"]
     Verify -.-> Gather
+    Guard["Safety check<br/>risky actions are<br/>blocked or asked"] -.-> Act
 ```
 
-Three things to know:
+Three things to know (as of November 2026):
 
-- **Nothing changes without your "yes."** Claude shows the diff and asks before editing.
-- **Use Plan Mode** (`/plan`) to see the *full* plan before any work starts – good for bigger changes.
-- **Read your `CLAUDE.md`** – the more context that file gives, the less Claude has to ask.
+- **New sessions start in auto mode.** Claude edits files and runs routine commands without asking each time. A separate safety check blocks risky actions such as production deploys, force pushes or sending sensitive data out.
+- **You stay in control.** `Esc` stops Claude mid-action. `/rewind` rolls files and conversation back. `Shift+Tab` switches mode: Manual asks before every change, Plan Mode (`/plan`) shows the full plan first.
+- **Claude only knows what it can see.** Put what isn't in your files into `CLAUDE.md`, and give it a way to check its own work. See **[Best practices](docs/05-best-practices.md)**.
 
 ---
 
@@ -61,7 +61,7 @@ Three things to know:
 | **Mac** / Linux | `curl -fsSL https://claude.ai/install.sh \| bash` |
 | **Windows** (PowerShell) | `irm https://claude.ai/install.ps1 \| iex` |
 
-> **Important:** Claude Code needs a **paid Claude plan** (Pro / Max / Team / Enterprise) or a **Console account** with API credits. The free Claude.ai plan doesn't include it. See [pricing](https://claude.com/pricing).
+> **Important:** Claude Code needs a **paid Claude plan** (Pro / Max / Ultra / Team / Enterprise) or a **Console account** with API credits. The free Claude.ai plan doesn't include it. See [pricing](https://claude.com/pricing).
 >
 > **Prefer no terminal?** Get the **[Desktop app](https://claude.com/download)** – same agent, regular app window.
 
@@ -69,7 +69,7 @@ Don't have a terminal yet? Start at **[Step 1](docs/01-terminal.md)** below.
 
 ---
 
-## The four steps
+## The five steps
 
 | # | Section | What you'll learn | Time |
 |---|---|---|---|
@@ -77,6 +77,7 @@ Don't have a terminal yet? Start at **[Step 1](docs/01-terminal.md)** below.
 | 2 | **[Install Claude](docs/02-install.md)** | Get `claude` running on Mac or Windows | 2 min |
 | 3 | **[Set up a project](docs/03-folders.md)** | What folders Claude looks at, and how to help it | 3 min |
 | 4 | **[Try real examples](docs/04-examples.md)** | Five things to do today | 5 min |
+| 5 | **[Best practices](docs/05-best-practices.md)** | Six habits that matter, and old advice to drop | 3 min |
 
 Bonus: **[One-page cheatsheet](CHEATSHEET.md)** · **[PDF download](https://github.com/velesnitski/claude-code-quickstart/releases/latest)**
 
@@ -84,7 +85,7 @@ Bonus: **[One-page cheatsheet](CHEATSHEET.md)** · **[PDF download](https://gith
 
 ## Starter pack (drop into your project)
 
-Everything in the four steps above pays off faster if you start from the **[starter-pack](starter-pack/)** folder:
+Everything in the steps above pays off faster if you start from the **[starter-pack](starter-pack/)** folder:
 
 - `CLAUDE.md.example` — a filled-in brand-voice file. Tweak the placeholders, save as `CLAUDE.md` at your repo root, done.
 - `prompts/` — five battle-tested copy-paste prompts: find feedback themes, blog → social, headline variants, tone-check, localize.
@@ -103,7 +104,7 @@ Adapt the brand voice in `CLAUDE.md`, then use the prompts as-is.
 
 The other excellent guides – [Florian Bruniaux's Ultimate Guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide), [Cranot's Guide](https://github.com/Cranot/claude-code-guide), [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) – are 10,000+ lines each. Brilliant references, overwhelming for newcomers.
 
-**This is the on-ramp.** Twelve minutes. Plain language. Pictures. When you're done, graduate:
+**This is the on-ramp.** Fifteen minutes. Plain language. Pictures. When you're done, graduate:
 
 - **Free official courses** – [Anthropic on Skilljar](https://anthropic.skilljar.com/) – start with **Claude Code 101**, then **Introduction to Agent Skills** and **Introduction to Subagents**.
 - **Long-form references** – the guides linked above for exhaustive depth.

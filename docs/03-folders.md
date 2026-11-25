@@ -26,9 +26,10 @@ flowchart LR
 ```
 my-project/
   CLAUDE.md             # the note for Claude (you create this)
+  CLAUDE.local.md       # your personal notes (optional, gitignore it)
   .claude/              # settings folder (optional)
     settings.json       # team-shared settings
-    commands/           # your custom shortcuts
+    skills/             # your reusable prompts
   src/                  # your code or content
   README.md             # your project's own readme
 ```
@@ -42,9 +43,10 @@ Don't worry about `.claude/` yet – we'll get to that. For now, just `CLAUDE.md
 | File | Where | What it does |
 |---|---|---|
 | `~/.claude/CLAUDE.md` | Your home folder | Personal preferences – loaded **everywhere** |
-| `<project>/CLAUDE.md` | Inside a project | Project context – loaded **only there** |
+| `<project>/CLAUDE.md` | Inside a project | Project context, shared with the team – loaded **only there** |
+| `<project>/CLAUDE.local.md` | Inside a project | Your personal notes for this project – keep it out of git |
 
-Both load automatically.
+All load automatically.
 
 ---
 
@@ -56,7 +58,7 @@ Open a project folder, run `claude`, and type:
 /init
 ```
 
-Claude looks at the folder and writes a draft `CLAUDE.md` for you. You can edit it after.
+Claude looks at the folder and writes a draft `CLAUDE.md` for you. After that the work is mostly **removing** lines: keep only what Claude couldn't work out from the files. Later, `/doctor` suggests what else to cut.
 
 ---
 
@@ -107,7 +109,12 @@ Three adjectives + a do / don't list.
 - Anything mentioning legal, pricing, or customer names → manager sign-off.
 ```
 
-Keep it short – under 150 lines. Long files dilute attention.
+Keep it short – under 200 lines. The file is loaded into every session, so every line takes a little attention on every task.
+
+**What earns a line:** voice and style rules, banned phrases, who approves what, how to check the work, anything you've corrected twice.
+**What doesn't:** a description of your folders. Claude reads those itself. The folder list in the template is there only for the notes Claude can't guess, such as "read-only".
+
+> **A rule with no exceptions** ("never edit `/assets`") is safer as a deny rule in `/permissions` than as a line here. `CLAUDE.md` is followed nearly every time; a deny rule is enforced every time.
 
 ### What "good" looks like (filled-in example)
 
@@ -186,10 +193,11 @@ Once `claude` is running, type these:
 |---|---|
 | `/help` | Lists every command |
 | `/init` | Auto-writes a `CLAUDE.md` for the current folder |
-| `/clear` | Forgets the conversation, keeps the `CLAUDE.md` |
+| `/clear` | New conversation, keeps the `CLAUDE.md`. Use it between unrelated tasks |
 | `/plan` | Plan Mode – Claude proposes steps, waits for your "yes" before changing files |
-| `/review` | Reviews your latest changes |
-| `/cost` | Shows tokens and cost so far |
+| `/rewind` | Undo – rolls files and conversation back to an earlier point |
+| `/code-review` | Reviews your latest changes with fresh eyes |
+| `/usage` | Shows cost so far and your plan limits |
 
 ---
 
