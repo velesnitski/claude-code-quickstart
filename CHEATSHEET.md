@@ -128,8 +128,9 @@ Keep under 200 lines. Only what Claude can't work out from the files. Place at r
 | Claude is heading the wrong way | Press `Esc`, redirect. After two failed corrections: `/clear` and a better prompt |
 | Want to undo Claude's edit | `/rewind` (or `Esc` twice). Git as backup: `git diff`, `git checkout -- <file>` |
 | Claude asks permission too often | `/fewer-permission-prompts` |
+| The answer isn't good enough | First give Claude a check to run, then raise the effort level in `/model`. Switch to a bigger model last |
 | Claude keeps ignoring a rule | Make it a deny rule in `/permissions`, not a line in `CLAUDE.md` |
 
 ---
 
-**Full guide:** [README.md](README.md) · **Best practices:** [docs/05](docs/05-best-practices.md) · **Official docs:** [code.claude.com/docs](https://code.claude.com/docs)
+**Full guide:** [README.md](README.md) · **Best practices:** [docs/05](docs/05-best-practices.md) · **Official docs:** [code.claude.com/docs](https://code.claude.com/docs) · **Tips:** [claude.dev](https://claude.dev/)
