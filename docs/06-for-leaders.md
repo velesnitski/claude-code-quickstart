@@ -22,6 +22,8 @@ Claude reads the stream. You read one page. Every correction you make becomes a 
 
 ---
 
+> **The prompts below are starting points.** Change the numbers and the wording to fit your team, and expect the first week's output to need correcting. That correcting is the point.
+
 ## Prompt 1 – The daily pulse
 
 ```
