@@ -21,7 +21,7 @@ starter-pack/
 
 2. **Use the prompts.** Open `prompts/<name>.md` and copy the prompt block into your Claude session. Tweak the file paths, run it. Each prompt is built to work alongside the `CLAUDE.md` voice rules above.
 
-3. **Graduate to skills.** Once a prompt is reliable, save it as a Claude Code **skill** so it triggers automatically. See the [Agent Skills course](https://anthropic.skilljar.com/) and [docs](https://docs.claude.com/en/docs/claude-code/skills) for the format.
+3. **Graduate to skills.** Once a prompt is reliable, tell Claude *"save this as a skill called <name>"*. It lands in `.claude/skills/<name>/SKILL.md` and you call it with `/<name>`. See the [Agent Skills course](https://anthropic.skilljar.com/) and [docs](https://code.claude.com/docs/en/skills) for the format.
 
 ## License
 

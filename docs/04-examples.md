@@ -4,7 +4,7 @@
 
 Each example below shows the flow and what your screen will look like. Pick one and try it today.
 
-> **Marketing or content work:** start here. **Working on code?** The same patterns apply – see [the official docs](https://docs.claude.com/en/docs/claude-code) for code-flavored examples.
+> **Marketing or content work:** start here. **Working on code?** The same patterns apply – see [the official docs](https://code.claude.com/docs) for code-flavored examples.
 
 ---
 
@@ -169,27 +169,31 @@ Each prompt above can become a one-line shortcut you (or your team) reuse foreve
 
 ```mermaid
 flowchart LR
-    P["Found a prompt<br/>that works"] --> Save["Save once as a skill<br/>~/.claude/skills/&lt;name&gt;.md"]
-    Save --> Reuse["Reuse anywhere:<br/>'use &lt;name&gt; skill'"]
+    P["Found a prompt<br/>that works"] --> Save["Save once as a skill<br/>.claude/skills/&lt;name&gt;/SKILL.md"]
+    Save --> Reuse["Reuse any time:<br/>type /&lt;name&gt;"]
     Reuse -.same prompt, every time.-> P
 ```
 
-A skill is a tiny markdown file describing when to use it and what to do. The five examples above are obvious candidates: `find-themes`, `repurpose-blog`, `headline-variants`, `tone-check`, `localize`. Build them once, your whole team gets the same on-brand output every time.
+A skill is a tiny markdown file describing when to use it and what to do. The fastest way to make one: when a prompt works, tell Claude *"save this as a skill called tone-check"*. Put it in `.claude/skills/` to share with the team through the project, or in `~/.claude/skills/` to have it in every project. The five examples above are obvious candidates: `find-themes`, `repurpose-blog`, `headline-variants`, `tone-check`, `localize`. Build them once, your whole team gets the same on-brand output every time.
 
 **Learn more:**
 
 - Anthropic's free hands-on course – **[Introduction to Agent Skills](https://anthropic.skilljar.com/)** (Skilljar).
-- Reference format and built-in vs custom skills – [docs.claude.com/en/docs/claude-code/skills](https://docs.claude.com/en/docs/claude-code/skills).
+- Reference format and built-in vs custom skills – [code.claude.com/docs/en/skills](https://code.claude.com/docs/en/skills).
 
 ---
 
 ## What's next?
 
-You've seen the loop: open a folder → run `claude` → ask in plain English. Once you're comfortable:
+You've seen the loop: open a folder → run `claude` → ask in plain English. Next, read **[Best practices](05-best-practices.md)** – six habits, three minutes. Once you're comfortable:
 
-- **[Skills](https://docs.claude.com/en/docs/claude-code/skills)** – save reusable instructions ("turn any blog post into social") that Claude can invoke automatically.
-- **[Hooks](https://docs.claude.com/en/docs/claude-code/hooks)** – run shell commands on events (e.g. auto-tone-check before commit).
-- **[MCP servers](https://docs.claude.com/en/docs/claude-code/mcp)** – connect Claude to your CMS, analytics, or CRM.
-- **[Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)** – delegate isolated tasks (research, drafting, fact-checking) in parallel.
+- **[Skills](https://code.claude.com/docs/en/skills)** – save reusable instructions ("turn any blog post into social") that Claude can invoke automatically.
+- **[Hooks](https://code.claude.com/docs/en/hooks)** – run shell commands on events (e.g. auto-tone-check before commit).
+- **[MCP servers](https://code.claude.com/docs/en/mcp)** – connect Claude to your CMS, analytics, or CRM.
+- **[Subagents](https://code.claude.com/docs/en/sub-agents)** – delegate isolated tasks (research, drafting, fact-checking) in parallel.
 
-Official docs: [docs.claude.com/en/docs/claude-code](https://docs.claude.com/en/docs/claude-code).
+Official docs: [code.claude.com/docs](https://code.claude.com/docs).
+
+---
+
+**Next:** [Best practices →](05-best-practices.md)

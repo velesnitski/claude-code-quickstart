@@ -8,9 +8,9 @@
 
 > **You need a paid Claude plan to use Claude Code.** The free Claude.ai plan does **not** include it. Any one of these works:
 >
-> - **Claude Pro / Max / Team / Enterprise** – sign up at [claude.com/pricing](https://claude.com/pricing). Recommended for individuals and most teams.
-> - **Anthropic Console** account with API credits – [console.anthropic.com](https://console.anthropic.com/). Pay-as-you-go.
-> - Cloud provider (Bedrock / Vertex AI / Foundry) – usually for enterprise.
+> - **Claude Pro / Max / Ultra / Team / Enterprise** – sign up at [claude.com/pricing](https://claude.com/pricing). Recommended for individuals and most teams.
+> - **Claude Console** account with API credits – [platform.claude.com](https://platform.claude.com/). Pay-as-you-go.
+> - Cloud provider (Amazon Bedrock / Google Cloud / Microsoft Foundry) – usually for enterprise.
 
 Plus:
 
@@ -51,7 +51,7 @@ curl -fsSL https://claude.ai/install.sh | bash
 brew install --cask claude-code
 ```
 
-> Homebrew installs do **not** auto-update. Run `brew upgrade claude-code` to get new versions.
+> Homebrew installs do **not** auto-update. Run `brew upgrade claude-code` to get new versions. This cask follows the stable channel, about a week behind; `claude-code@latest` gets releases the day they ship.
 
 ### On Windows
 
@@ -80,7 +80,9 @@ curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del in
 winget install Anthropic.ClaudeCode
 ```
 
-> Recommended on Windows: also install [Git for Windows](https://git-scm.com/downloads/win). Claude Code uses it for some shell features. Optional but smoother.
+> WinGet installs do **not** auto-update. Run `winget upgrade Anthropic.ClaudeCode`.
+
+> Recommended on Windows: also install [Git for Windows](https://git-scm.com/downloads/win). It gives Claude a Bash shell. Without it Claude uses PowerShell. Optional but smoother.
 
 ### On Linux / WSL
 
@@ -117,7 +119,7 @@ sequenceDiagram
     participant Browser
     You->>Terminal: claude
     Terminal->>Browser: opens claude.ai login page
-    You->>Browser: sign in (Pro / Max / Team / Console)
+    You->>Browser: sign in (your paid plan or Console)
     Browser-->>Terminal: ✓ authenticated
     Terminal-->>You: ◆ Welcome to Claude Code
 ```
@@ -139,12 +141,14 @@ The `>` is Claude waiting for you to type a question. **You're installed and rea
 
 Press `Ctrl+C` to exit any time.
 
+> **Good to know:** new sessions start in **auto mode** – Claude edits files and runs routine commands without asking each time, and a safety check blocks risky actions. Prefer to approve every change? Press `Shift+Tab` to switch to Manual mode.
+
 ---
 
 ## Verify it worked
 
 ```bash
-claude --version    # should print a version number
+claude --version    # prints something like 2.1.322 (Claude Code)
 claude doctor       # deeper health check
 ```
 
@@ -158,8 +162,8 @@ claude doctor       # deeper health check
 | Windows says "claude is not recognized" | Close & reopen PowerShell. Sign out / sign in to Windows so the PATH refreshes. |
 | Windows says "running scripts is disabled" | Run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, then retry. |
 | Windows says "'irm' is not recognized" | You're in CMD, not PowerShell – use the CMD command above. |
-| The login keeps looping | Run `claude logout`, then `claude` again. |
-| "Invalid plan" or no Code access | Your Claude.ai account is on the **free** plan. Upgrade to Pro/Max/Team or use a Console account. |
+| The login keeps looping | Run `claude auth logout`, then `claude` again. |
+| "Invalid plan" or no Code access | Your Claude.ai account is on the **free** plan. Upgrade to a paid plan or use a Console account. |
 | Antivirus blocks the installer (Windows) | Allow it – the installer is signed by Anthropic. |
 
 Still stuck? Official troubleshooting: [code.claude.com/docs/en/troubleshoot-install](https://code.claude.com/docs/en/troubleshoot-install).
